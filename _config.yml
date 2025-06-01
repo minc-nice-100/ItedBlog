@@ -56,14 +56,13 @@ collections:
     permalink: /:collection/:path/
 
 ordered_collections:
-  - posts
   - pages
-  - others
+  - posts
 
 page_width: 800px
 
 destination:      ./_site
-incremental:      false
+incremental:      true
 regenerate:       true
 
 plugins:

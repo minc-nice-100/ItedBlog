@@ -1,9 +1,8 @@
 ---
 title: Contact
-author: Tao He
-date: 2022-02-05
-category: Jekyll
 layout: post
 ---
 
-This is an contact page.
+- GitHub: [minc-nice-100](https://github.com/minc-nice-100/)
+
+- Email: [admin@itedev.com](mailto:admin@itedev.com)
