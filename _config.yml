@@ -7,7 +7,6 @@ description: >
   Crafted with Care & Code ❤️
 
 version:          1.0
-gitbook_version:  3.2.3
 
 url:              'https://itedev.com'
 baseurl:          '/'
@@ -21,8 +20,7 @@ toc:
   h_min:   1
   h_max:   3
 
-# customize the link favicon in header, will be {{site.baseurl}}/{{site.favicon_path}}
-favicon_path:     /assets/gitbook/images/favicon.ico
+favicon_uri:     "https://static.itedev.com/favicon.ico"
 
 # markdown render engine.
 markdown:         kramdown
