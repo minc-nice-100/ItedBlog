@@ -1,16 +1,16 @@
 # Configurations
-title:            Jekyll Gitbook
-longtitle:        Jekyll Gitbook
-author:           HE Tao
-email:            sighingnow@gmail.com
+title:            Ited Blog
+longtitle:        Ited Blog
+author:           minc_nice_100
+email:            admin@itedev.com
 description: >
-  Build Jekyll site with the GitBook style.
+  Crafted with Care & Code ❤️
 
 version:          1.0
 gitbook_version:  3.2.3
 
-url:              'https://sighingnow.github.io'
-baseurl:          '/jekyll-gitbook'
+url:              'https://itedev.com'
+baseurl:          '/'
 rss:              RSS
 
 # bootstrap: use the remote theme for the site itself
@@ -41,7 +41,7 @@ syntax_highlighter_style: colorful
 markdown_ext:             markdown,mkdown,mkdn,mkd,md
 
 # Permalinks
-permalink:                /:categories/:year-:month-:day-:title:output_ext
+permalink:                /:categories/:year/:month/:day/:title:output_ext
 
 # Disqus comments
 # disqushandler:            sighingnow
