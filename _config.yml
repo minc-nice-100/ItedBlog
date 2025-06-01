@@ -9,7 +9,7 @@ description: >
 version:          1.0
 
 url:              'https://itedev.com'
-baseurl:          '/'
+baseurl:          'https://itedev.com'
 rss:              RSS
 
 # bootstrap: use the remote theme for the site itself
