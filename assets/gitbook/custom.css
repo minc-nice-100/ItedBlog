@@ -161,14 +161,10 @@
         /* 应用字体到您的类 */
         .book.font-family-1 {
             font-family: 'Noto Serif SC', Georgia, serif;
-            font-weight: 400;
-            line-height: 1.6;
         }
         
         .book.font-family-0 {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-weight: 700;
-            line-height: 1.5;
         }
         
 
