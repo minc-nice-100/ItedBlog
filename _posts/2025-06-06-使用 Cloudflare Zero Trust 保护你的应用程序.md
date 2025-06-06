@@ -2,9 +2,7 @@
 layout: post
 title: 使用 Cloudflare Zero Trust 保护你的应用程序
 author: minc_nice_100
-tags:
-    - Cloudflare
-    - Zero Trust
+tags: [Cloudflare, Zero Trust]
 ---
 
 由于社团的需要, 站长需要暴露机器上的一些端点, 并进行保护以免未经授权的访问, 由于站长使用 Cloudflare Tunnel 进行内网穿透, 因此需要使用 Cloudflare Zero Trust 进行保护.

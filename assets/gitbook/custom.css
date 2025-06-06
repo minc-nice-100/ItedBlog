@@ -156,16 +156,16 @@
 
 
 /* Custom font settings */
-  
-        @import "https://fonts.itedev.com/NotoSerifSC/index.css";
+@import "https://fonts.itedev.com/NotoSerifSC/index.css";
+
         /* 应用字体到您的类 */
-        .book.font-family-1 {
-            font-family: 'Noto Serif SC', Georgia, serif;
-        }
+.book.font-family-0 {/* serif */
+    font-family: 'Noto Serif SC', Georgia, serif;
+}
         
-        .book.font-family-0 {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        }
+.book.font-family-1 {/* sans-serif */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
         
 
 /* Render wide tables */
