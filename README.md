@@ -15,4 +15,4 @@ permalink: /
 祝你生活愉快
 (*^__^*)
 
-![看张图罢](https://nas-alist.itedev.com/d/blog/bacb0d9587854b8789455604f138c24a.avif)
+![看张图罢](https://sso.itedev.com/get-bing-image)
