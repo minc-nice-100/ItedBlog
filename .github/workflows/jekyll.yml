@@ -46,6 +46,9 @@ jobs:
       - name: Clean up ./_site
         # 清理旧构建
         run: rm -rf ./_site
+      - name: Clean up Jekyll cache
+        # 清理 Jekyll 缓存
+        run: bundle exec jekyll clean
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build
