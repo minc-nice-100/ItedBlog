@@ -45,7 +45,7 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Clean up ./_site
         # 清理旧构建
-        run: rm -rf _site
+        run: rm -rf ./_site
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build
