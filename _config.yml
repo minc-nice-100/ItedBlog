@@ -69,3 +69,6 @@ plugins:
   - jekyll-feed
   - jekyll-readme-index
   - jemoji
+
+copr:
+  text: "Copr. 2022 Ited Blog."
