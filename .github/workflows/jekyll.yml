@@ -51,7 +51,7 @@ jobs:
         run: bundle exec jekyll clean
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --no-incremental
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
