@@ -11,4 +11,4 @@ permalink: /
 祝你生活愉快
 (*^__^*)
 
-![看张图罢](https://sso.itedev.com/get-bing-image)
+![看张图罢](https://get-bing-image.api.itedev.com)
