@@ -63,7 +63,7 @@ curl -H "CF-Access-Client-Id: ***.access" -H "CF-Access-Client-Secret: ***" http
 ## 总结
 至此, 你已经学会如何使用 Cloudflare Zero Trust 保护你的端点, 保护好你的令牌/证书(大声!!).
 
-欢迎找我讨论: [Contact](https://itedev.com/pages/contact/)
+欢迎找我讨论: [Contact](/pages/contact/)
 
 ## 后记
 文字里所提的端点是暴露给 Sean (鲤鱼🐟)他们的一个社团的, [你可以到这里找🐟玩](https://makabaka1880.xyz/)
