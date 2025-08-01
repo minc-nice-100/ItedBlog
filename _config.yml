@@ -8,8 +8,8 @@ description: >
 
 version:          1.0
 
-url:              'https://itedev.com'
-baseurl:          'https://itedev.com'
+url:              'https://www.itedev.com'
+baseurl:          'https://www.itedev.com'
 rss:              RSS
 
 # bootstrap: use the remote theme for the site itself
@@ -71,4 +71,4 @@ plugins:
   - jemoji
 
 copr:
-  text: "Copr. 2022 Ited Blog."
+  text: "Copr. 2022 Ited Blog"
