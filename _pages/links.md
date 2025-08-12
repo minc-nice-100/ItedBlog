@@ -18,3 +18,6 @@ layout: post
 Hi，我是Tab，一个在代码世界苦苦挣扎但乐在其中的编导生。
 
 [Tab is talking here.<br />Click to visit.](https://tabyion.github.io/)
+
+## Flory 博客
+[我们都是流浪者, 在同一颗星星下, 做着不同的梦.<br />Click to visit.](https://aflory.com/)

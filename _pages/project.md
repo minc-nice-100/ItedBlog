@@ -32,3 +32,9 @@ layout: post
 [官网](https://www.teacharlie.com/)
 
 ![Background Image](https://static.teacharlie.com/5df6221ca43e0a04e49bb4ccf290dfe4.jpg)
+
+
+## Flory 博客
+[我们都是流浪者, 在同一颗星星下, 做着不同的梦.<br />Click to visit.](https://aflory.com/)
+
+![aflory.com 网页快照](https://bucket.itedev.com/blog/20250812235950754.png)
