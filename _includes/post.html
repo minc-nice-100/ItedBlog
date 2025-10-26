@@ -1,0 +1,32 @@
+<section class="memos">
+  <h2>Latest Posts</h2>
+  <div class="grid">
+    {% for post in site.posts %}
+      <div class="card memo">
+        <!-- 文章标题 -->
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+
+        <!-- 发布时间 -->
+        <p class="post-date" style="color: #888; font-size: 0.9em;">
+          {{ post.date | date: "%Y-%m-%d" }}
+        </p>
+
+        <!-- 摘要 -->
+        <p>
+          {% if post.excerpt %}
+            {{ post.excerpt | strip_html | truncate: 120 }}
+          {% else %}
+            {{ post.content | strip_html | truncate: 120 }}
+          {% endif %}
+        </p>
+
+        <!-- 阅读更多 -->
+        <p>
+          <a href="{{ post.url }}" style="color: #1e90ff; text-decoration: underline;">
+            Read more &raquo;
+          </a>
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
