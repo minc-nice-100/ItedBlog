@@ -68,14 +68,10 @@ exclude:
 # 导航栏设置
 # ==========================
 nav:
-  - title: Index
-    url: /
-  - title: Archive
-    url: /archive/
   - title: Projects
-    url: /page/projects/
+    url: /projects/
   - title: About
-    url: /page/about/
+    url: /about/
 
 # ==========================
 # 代码块高亮
