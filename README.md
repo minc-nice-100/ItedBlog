@@ -1,14 +1,17 @@
----
-layout: home
-title: Index
-permalink: /
----
+# Noctua v3 Offline (ItedBlog)
 
-## 欢迎来到 Ited Blog!
+This package contains a complete Jekyll theme configured for pure Markdown writing.
+It includes **placeholder** vendor files and a `fetch_vendor.sh` script to download
+the official minified libraries into `assets/vendor/` so the site can run fully offline.
 
-博主为高中生, 非单.
+How to install:
+1. Unzip into your blog repo root (ItedBlog).
+2. Run `./fetch_vendor.sh` (requires curl) to download real vendor files.
+3. Optionally upload `assets/` to your CDN and set `cdn_base` in `_config.yml`.
+4. Run `bundle exec jekyll serve` to test locally.
 
-祝你生活愉快
-(*^__^*)
+Files you may want to replace:
+- assets/vendor/* : placeholder JS/CSS. Run fetch script to replace with official builds.
 
-![看张图罢](https://get-bing-image.api.itedev.com)
+If you want me to fetch the real vendor files and embed fonts for you, I can attempt it,
+but I cannot access your GitHub; instead I will produce the package and a fetch script.

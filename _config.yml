@@ -1,74 +1,117 @@
-# Configurations
-title:            Ited Blog
-longtitle:        Ited Blog
-author:           minc_nice_100
-email:            admin@itedev.com
-description: >
-  Crafted with Care & Code ❤️
+# ====================================
+#  Noctua Jekyll Theme v3.1 (for ItedBlog)
+# ====================================
 
-version:          1.0
+title: ItedBlog
+description: "You are good enough."
+url: "https://www.itedev.com"
+baseurl: "" # 如果部署到子路径，例如 /blog，请填写 /blog
 
-url:              'https://www.itedev.com'
-baseurl:          'https://www.itedev.com'
-rss:              RSS
+# 作者信息
+author:
+  name: "minc_nice_100"
+  email: "admin@itedev.com"
+  avatar: "/assets/img/avatar.jpg"
 
-# bootstrap: use the remote theme for the site itself
-remote_theme: sighingnow/jekyll-gitbook
+# ==========================
+# 站点构建设置
+# ==========================
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+timezone: Asia/Shanghai
+encoding: utf-8
 
-toc:
-  enabled: false
-  h_min:   1
-  h_max:   3
+# ==========================
+# 主题设置
+# ==========================
+theme: null
+sass:
+  style: compressed
 
-favicon_uri:     "https://static.itedev.com/favicon.ico"
+cdn_base: "/assets"
 
-# markdown render engine.
-markdown:         kramdown
-kramdown:
-  auto_ids:               true
-  input:                  GFM
-  math_engine:            mathjax
-  smart_quotes:           lsquo,rsquo,ldquo,rdquo
-  toc_levels:             1..6
-  syntax_highlighter:     rouge
-  syntax_highlighter_opts:
-    guess_lang:           true
+# 字体和样式
+font_url: "https://fonts.itedev.com/NotoSerifSC/index.css"
 
-syntax_highlighter_style: colorful
+# ==========================
+# 插件
+# ==========================
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
-markdown_ext:             markdown,mkdown,mkdn,mkd,md
-
-# Permalinks
-permalink:                /:categories/:year/:month/:day/:title:output_ext
-
-# Disqus comments
-# disqushandler:            sighingnow
-
-exclude:
-  - _drafts
-
+# ==========================
+# 自定义集合
+# ==========================
 collections:
   pages:
     output: true
-    permalink: /:collection/:path/
-  others:
-    output: true
-    permalink: /:collection/:path/
+    permalink: /:name/
 
-ordered_collections:
-  - pages
-  - posts
+# ==========================
+# Exclude 构建排除列表
+# ==========================
+exclude:
+  - README.md
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - .gitignore
+  - .github/
 
-page_width: 800px
+# ==========================
+# 导航栏设置
+# ==========================
+nav:
+  - title: Index
+    url: /
+  - title: Archive
+    url: /archive/
+  - title: Projects
+    url: /page/projects/
+  - title: About
+    url: /page/about/
 
-destination:      ./_site
-incremental:      true
-regenerate:       true
+# ==========================
+# 代码块高亮
+# ==========================
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: "highlight"
 
-plugins:
-  - jekyll-feed
-  - jekyll-readme-index
-  - jemoji
+# ==========================
+# LaTeX 支持 (MathJax)
+# ==========================
+mathjax: true
 
-copr:
-  text: "Copr. 2022 Ited Blog"
+# ==========================
+# 搜索设置
+# ==========================
+search:
+  enable: true
+  json: "/search.json"
+
+# ==========================
+# 图片与懒加载
+# ==========================
+lazyload:
+  enable: true
+  placeholder: "/assets/img/placeholder.png"
+
+# ==========================
+# SEO
+# ==========================
+seo:
+  twitter:
+    username: ""
+  social:
+    name: "Zhicheng Wu"
+    links:
+      - "https://github.com/minc-nice-100"
