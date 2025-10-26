@@ -11,7 +11,7 @@ baseurl: "" # 如果部署到子路径，例如 /blog，请填写 /blog
 author:
   name: "minc_nice_100"
   email: "admin@itedev.com"
-  avatar: "/assets/img/avatar.jpg"
+  avatar: "https://static.itedev.com/www.itedev.com/assets/img/avatar.jpg"
 
 # ==========================
 # 站点构建设置
@@ -29,7 +29,7 @@ theme: null
 sass:
   style: compressed
 
-cdn_base: "/assets"
+cdn_base: "https://static.itedev.com/www.itedev.com/assets"
 
 # 字体和样式
 font_url: "https://fonts.itedev.com/NotoSerifSC/index.css"
