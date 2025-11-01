@@ -72,6 +72,14 @@ nav:
     url: /projects/
   - title: About
     url: /about/
+  - title: Contact
+    url: /contact/
+
+# ==========================
+# 分页设置
+# ==========================
+paginate: 10
+paginate_path: /page:num/
 
 # ==========================
 # 代码块高亮

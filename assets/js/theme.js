@@ -29,18 +29,6 @@ document.addEventListener('DOMContentLoaded', function(){
     try{ renderMathInElement(document.body); }catch(e){}
   }
 
-  // init search when simple-jekyll-search is present
-  if(window.SimpleJekyllSearch){
-    try{
-      SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: '/search.json',
-        limit: 10,
-        fuzzy: false,
-        searchResultTemplate: '<li><a href="{url}">{title}</a> <small style="color:var(--muted)">{date}</small></li>'
-      });
-    }catch(e){}
-  }
+  // 搜索功能已改为直接使用必应搜索，无需初始化SimpleJekyllSearch
 
 });

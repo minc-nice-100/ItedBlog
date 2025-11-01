@@ -23,9 +23,21 @@ body{
   line-height:1.6;
 }
 .container{max-width:1100px;margin:36px auto;padding:0 20px;}
-.site-header{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;}
-.logo{font-weight:700;}
-nav a{margin:0 8px;color:var(--muted)}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:var(--card-dark);border-bottom:1px solid rgba(255,255,255,0.05);box-shadow:0 2px 8px rgba(0,0,0,0.1);position:sticky;top:0;z-index:100;}
+.header-left{display:flex;align-items:center;gap:24px;}
+.header-right{display:flex;align-items:center;}
+.logo-link{text-decoration:none;}
+.logo{font-weight:700;font-size:1.4rem;color:var(--text);letter-spacing:-0.5px;}
+nav a{margin:0 12px;color:var(--muted);text-decoration:none;font-weight:500;transition:color 0.2s ease;position:relative;}
+nav a:hover{color:var(--accent);}
+nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);transition:width 0.2s ease;}
+nav a:hover::after{width:100%;}
+.search-form{display:flex;align-items:center;background:rgba(255,255,255,0.05);border-radius:20px;padding:4px 12px;transition:all 0.2s ease;}
+.search-form:hover{background:rgba(255,255,255,0.08);}
+.search-input{border:none;background:transparent;color:var(--text);padding:6px 8px;width:180px;outline:none;}
+.search-input::placeholder{color:var(--muted);}
+.search-button{background:transparent;border:none;color:var(--muted);cursor:pointer;padding:4px;display:flex;align-items:center;justify-content:center;transition:color 0.2s ease;}
+.search-button:hover{color:var(--accent);}
 .hero{display:flex;gap:20px;align-items:center;padding:24px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.6);}
 .avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.03)}
 .hero h1{margin:0;font-size:28px}
@@ -40,4 +52,11 @@ footer{margin-top:40px;padding:20px;color:var(--muted);font-size:14px;text-align
 @media (max-width:640px){
   .hero{flex-direction:column;align-items:flex-start}
   .avatar{width:96px;height:96px}
+  .site-header{padding:12px 16px;flex-direction:column;gap:12px;}
+  .header-left{gap:16px;width:100%;justify-content:space-between;}
+  .header-right{width:100%;justify-content:center;}
+  .logo{font-size:1.2rem;}
+  nav a{margin:0 6px;font-size:0.85rem;}
+  .search-form{width:100%;max-width:280px;}
+  .search-input{width:100%;flex-grow:1;}
 }

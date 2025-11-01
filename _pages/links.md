@@ -3,7 +3,7 @@ title: Links
 layout: post
 ---
 
-这是友链!!!!! 申请友链:  [Contact](/pages/contact/)
+这是友链!!!!! 申请友链:  [Contact](s/contact/)
 
 <audio title="雨落花开 - WillYoga王颢霖,欧阳潇枫.mp3" controls src="https://bucket.itedev.com/blog/9a5e1d5f77f948fbaa563bd899f255f6.mp3" ></audio>
 
