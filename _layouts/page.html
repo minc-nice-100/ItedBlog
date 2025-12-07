@@ -1,10 +1,10 @@
----
----
-{% include head.html %}
-{% include header.html %}
-<main class="container">
-  <article class="card">
-    {{ content }}
-  </article>
-</main>
-{% include footer.html %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+{% include head.html -%}
+<body>
+{% include header.html -%}
+{{ content }}
+{% include footer.html -%}
+{% include script.html -%}
+</body>
+</html>

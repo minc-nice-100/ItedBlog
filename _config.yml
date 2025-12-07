@@ -1,121 +1,68 @@
-# ====================================
-#  Noctua Jekyll Theme v3.1 (for ItedBlog)
-# ====================================
-
-title: Ited Blog
-description: "You are good enough."
-url: "https://www.itedev.com"
-baseurl: "" # 如果部署到子路径，例如 /blog，请填写 /blog
-
-# 作者信息
-author:
-  name: "minc_nice_100"
-  email: "admin@itedev.com"
-  avatar: "https://static.itedev.com/www.itedev.com/assets/img/avatar.jpg"
-
-# ==========================
-# 站点构建设置
-# ==========================
-markdown: kramdown
-highlighter: rouge
-permalink: /:categories/:title/
-timezone: Asia/Shanghai
 encoding: utf-8
 
-# ==========================
-# 主题设置
-# ==========================
-theme: null
-sass:
-  style: compressed
-
-cdn_base: "https://static.itedev.com/www.itedev.com/assets"
-
-# 字体和样式
-font_url: "https://fonts.itedev.com/NotoSerifSC/index.css"
-
-# ==========================
-# 插件
-# ==========================
 plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
+  - jekyll-regex-replace
 
-# ==========================
-# 自定义集合
-# ==========================
-collections:
-  pages:
-    output: true
-    permalink: /:name/
+# SEO相关信息
+title: Ited Blog
+description: You are good enough.
+keywords: Ited, blog, tech, programming, coding, life, 博客, 技术, 编程, 编码, 生活, minc_nice_100, 土拨鼠
+author: minc_nice_100
+footerText: 'Copr. 2022 Ited Blog'
 
-# ==========================
-# Exclude 构建排除列表
-# ==========================
-exclude:
-  - README.md
-  - node_modules
-  - vendor
-  - Gemfile
-  - Gemfile.lock
-  - package.json
-  - package-lock.json
-  - .gitignore
-  - .github/
-
-# ==========================
-# 导航栏设置
-# ==========================
-nav:
-  - title: Projects
-    url: /projects/
-  - title: About
-    url: /about/
-  - title: Contact
-    url: /contact/
-
-# ==========================
-# 分页设置
-# ==========================
-paginate: 10
-paginate_path: /page:num/
-
-# ==========================
-# 代码块高亮
-# ==========================
+# 这些不要动
+permalink: /posts/:year/:month/:day/:title.html
 kramdown:
+  auto_ids: true
   input: GFM
   syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    css_class: "highlight"
+exclude: ['CNAME', 'README.md', 'LICENSE', '_site', 'dist', 'Gemfile', 'Gemfile.lock', 'blog.sh']
 
-# ==========================
-# LaTeX 支持 (MathJax)
-# ==========================
-mathjax: true
+# 域名配置
+# baseurl配置,如果网站部署在根目录下的其他目录中，请设置为 /目录名
+domainUrl: 'https://www.itedev.com'
+baseurl: ''
 
-# ==========================
-# 搜索设置
-# ==========================
-search:
-  enable: true
-  json: "/search.json"
+# 吐个槽地址，会在chat页面中重定向到该地址
+tucaoUrl: https://github.com/minc-nice-100/minc-nice-100/issues/new
 
-# ==========================
-# 图片与懒加载
-# ==========================
-lazyload:
-  enable: true
-  placeholder: "/assets/img/placeholder.png"
+# 菜单
+# 必填字段 title: '文本' url: '链接'
+# 可选字段 target: '_blank' 新页面打开 
+menu:
+  - title: Home
+    url: /
+  - title: Categories
+    url: /pages/categories.html
+  - title: Search
+    url: /pages/search.html
+  - title: Links
+    url: /pages/links.html
+  - title: Chat
+    url: /pages/chat.html
+    target: '_blank'
+  - title: About
+    url: /pages/about.html
 
-# ==========================
-# SEO
-# ==========================
-seo:
-  twitter:
-    username: ""
-  social:
-    name: "Zhicheng Wu"
-    links:
-      - "https://github.com/minc-nice-100"
+# 点击页面文字冒出特效,不需要请设置为false
+extClickEffect: false
+
+# Google Adsense,不需要请设置为false
+# _includes/ext-adsense.html 里面修改为自己的配置
+extAdsense: false
+
+# 数学公式支持，比较影响加载速度,不需要请设置为false
+extMath: true
+
+# 显示访问量统计，由不蒜子提供服务
+extCount: false
+
+# 友情链接
+links:
+  - title: Makabaka1880的博客
+    url: https://makabaka1880.xyz
+  - title: Tab's Blog
+    url: https://tabyion.github.io
+  - title: 唤青映记
+    url: https://www.eees.blog
+

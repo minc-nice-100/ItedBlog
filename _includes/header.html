@@ -1,22 +1,19 @@
-<header class="site-header">
-  <div class="header-left">
-    <a href="/" class="logo-link"><strong class="logo">{{ site.title }}</strong></a>
-    <nav id="nav-links">
-      <a href="/">Home</a>
-      <a href="/about/">About</a>
-      <a href="/projects/">Projects</a>
-      <a href="/archive/">Archive</a>
-    </nav>
-  </div>
-  <div class="header-right">
-    <form class="search-form" action="https://www.bing.com/search" method="get" target="_blank">
-      <input type="text" name="q" class="search-input" placeholder="搜索必应..." aria-label="Search">
-      <button type="submit" class="search-button" aria-label="Submit search">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <path d="m21 21-4.35-4.35"></path>
-        </svg>
-      </button>
-    </form>
-  </div>
+<header class="header">
+  <a href="{{ site.baseurl }}/" class="logo"></a>
+  <nav class="menu">
+    {% for menu in site.menu -%}
+
+      {%- assign target = "" %}
+      {%- if menu.target %}
+        {% capture target %}target="{{ menu.target }}"{% endcapture %}
+      {%- endif %}
+
+      {%- assign href = menu.url %}
+      {%- unless href contains "://" %}
+        {% capture href %}{{ site.baseurl }}{{ menu.url }}{% endcapture %}
+      {%- endunless -%}
+
+      <a href="{{href}}" {{target}} class="hover-underline">{{ menu.title }}</a>
+    {% endfor -%}
+  </nav>
 </header>

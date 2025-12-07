@@ -1,13 +1,15 @@
-<footer>
-  <div id="hitokoto">Loading one-liner...</div>
-  <div style="margin-top:8px">© {{ site.time | date: "%Y" }} {{ site.title }} • <a href="https://itedev.com">itedev.com</a></div>
+<footer class="footer">
+  <span>{{ site.footerText }}</span>
+  <a href="{{ site.baseurl }}/static/xml/rss.xml">RSS</a>
+
+  {%- if site.extCount %}
+    <span>总访问量</span>
+    <span id="busuanzi_value_site_pv"></span>
+  {% endif %}
+  <div class="footer-btn theme-toggler hide">
+    <i class="svg-icon icon-theme-light"></i>
+  </div>
+  <div class="footer-btn to-top">
+    <i class="svg-icon icon-arrow-top"></i>
+  </div>
 </footer>
-<script>
-  (function(){
-    var el = document.getElementById('hitokoto');
-    if(!el) return;
-    fetch('https://v1.hitokoto.cn/?encode=json').then(r=>r.json()).then(j=>{
-      el.textContent = j.hitokoto + " — " + (j.from || 'Hitokoto');
-    }).catch(()=>{ el.textContent = "Wish you a happy life!"; });
-  })();
-</script>
