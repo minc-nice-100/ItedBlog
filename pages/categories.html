@@ -1,11 +1,11 @@
 ---
 layout: page
-title: 文章分类
+title: Categories
 ---
 
 <div class="page page-categories">
   <div class="list-category">
-    <h2>所有分类</h2>
+    <h2>All Categories</h2>
     <div>
       {%- for category in site.categories %}
       <a href="javascript:document.getElementById('{{ category[0] }}').scrollIntoView()">{{ category[0] }}</a>
@@ -18,7 +18,7 @@ title: 文章分类
     <ul>
       {%- for post in category[1] %}
       <li>
-        <span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
+        <span class="date">{{ post.date | date: "%Y.%m.%d" }}</span>
         <div class="title">
           <a href="{{ site.baseurl | append: post.url }}" class="hover-underline">{{ post.title }}</a>
         </div>
