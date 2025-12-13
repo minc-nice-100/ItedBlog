@@ -6,6 +6,21 @@
     <span>总访问量</span>
     <span id="busuanzi_value_site_pv"></span>
   {% endif %}
+  <div class="footer-bottom">
+    <span class="commit-info">
+      <span class="commit-label">Version:</span>
+      <code class="commit-hash">
+        {% if site.github.build_revision %}
+          {{ site.github.build_revision | slice: 0,7 }}
+        {% else %}
+          {% capture git_hash %}`git rev-parse --short HEAD 2>/dev/null || echo "dev"`{% endcapture %}
+          {{ git_hash | strip }}
+        {% endif %}
+      </code>
+      <span class="separator">•</span>
+      {{ site.time | date: "%b %d, %Y" }}
+    </span>
+  </div>
   <div class="footer-btn theme-toggler hide">
     <i class="svg-icon icon-theme-light"></i>
   </div>
