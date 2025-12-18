@@ -395,77 +395,7 @@ blog.addLoadEvent(function () {
   }
 })
 
-/**
- * 更新giscus评论系统的主题
- * @param {boolean} isDarkMode 是否为深色模式
- */
-blog.updateGiscusTheme = function(isDarkMode) {
-  const giscusFrame = document.querySelector('iframe.giscus-frame')
-  if (!giscusFrame || !giscusFrame.contentWindow) return
-  
-  const theme = isDarkMode ? 'dark' : 'light'
-  
-  // 向giscus发送主题配置消息 - 正确的格式
-  giscusFrame.contentWindow.postMessage({ 
-    setConfig: { 
-      theme: theme
-    } 
-  }, 'https://giscus.app')
-}
-
-// 监听giscus加载完成事件
-blog.addLoadEvent(function() {
-  // 监听giscus发送的消息
-  window.addEventListener('message', function(event) {
-    if (event.origin !== 'https://giscus.app') return
-    
-    const giscusData = event.data
-    if (giscusData && giscusData.giscus && giscusData.giscus.resizeHeight) {
-      // giscus加载完成，立即应用当前主题
-      setTimeout(() => {
-        blog.updateGiscusTheme(blog.darkMode)
-      }, 100)
-    }
-  })
-})
-
-// 修改深色模式初始化函数
-blog.initDarkMode = function(flag) {
-  blog.darkMode = flag === 'true'
-  
-  // 切换页面主题
-  if (blog.darkMode) {
-    blog.addClass(document.documentElement, 'dark')
-    blog.removeClass(document.documentElement, 'light')
-  } else {
-    blog.addClass(document.documentElement, 'light')
-    blog.removeClass(document.documentElement, 'dark')
-  }
-  
-  // 更新giscus主题
-  blog.updateGiscusTheme(blog.darkMode)
-}
-
-// 标题定位
-blog.addLoadEvent(function () {
-  if (!document.querySelector('.page-post')) {
-    return
-  }
-  const list = document.querySelectorAll('.post h1, .post h2')
-  for (var i = 0; i < list.length; i++) {
-    blog.addEvent(list[i], 'click', function (event) {
-      const el = event.target
-      if (el.scrollIntoView) {
-        el.scrollIntoView({ block: 'start' })
-      }
-      if (el.id && history.replaceState) {
-        history.replaceState({}, '', '#' + el.id)
-      }
-    })
-  }
-})
-
-// 切换夜间模式（修改现有代码）
+// 切换夜间模式
 blog.addLoadEvent(function () {
   const $el = document.querySelector('.footer-btn.theme-toggler')
   const $icon = $el.querySelector('.svg-icon')
@@ -487,7 +417,7 @@ blog.addLoadEvent(function () {
       document.documentElement.removeAttribute('transition')
     }, 600)
 
-    blog.initDarkMode(flag)  // 调用修改后的initDarkMode函数
+    blog.initDarkMode(flag)
   }
 
   blog.addEvent($el, 'click', function () {
@@ -506,3 +436,98 @@ blog.addLoadEvent(function () {
     })
   }
 })
+
+// 标题定位
+blog.addLoadEvent(function () {
+  if (!document.querySelector('.page-post')) {
+    return
+  }
+  const list = document.querySelectorAll('.post h1, .post h2')
+  for (var i = 0; i < list.length; i++) {
+    blog.addEvent(list[i], 'click', function (event) {
+      const el = event.target
+      if (el.scrollIntoView) {
+        el.scrollIntoView({ block: 'start' })
+      }
+      if (el.id && history.replaceState) {
+        history.replaceState({}, '', '#' + el.id)
+      }
+    })
+  }
+})
+
+
+function sendMessage(message) { 
+   const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame'); 
+   if (!iframe) return; 
+   iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app'); 
+} 
+
+// 检测并切换深色/浅色模式
+function toggleDarkMode() {
+  const isDarkMode = document.documentElement.classList.contains('dark');
+  const theme = isDarkMode ? 'dark' : 'light';
+  
+  sendMessage({ 
+    setConfig: { 
+      theme: theme
+    } 
+  });
+}
+
+// 监听系统主题变化
+function setupThemeListener() {
+  // 检测系统主题偏好
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  
+  // 初始设置
+  toggleDarkMode();
+  
+  // 监听系统主题变化
+  mediaQuery.addEventListener('change', (e) => {
+    if (e.matches) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    toggleDarkMode();
+  });
+}
+
+// 手动切换主题的函数
+function switchTheme() {
+  const isDarkMode = document.documentElement.classList.contains('dark');
+  
+  if (isDarkMode) {
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+  } else {
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
+  }
+  
+  toggleDarkMode();
+}
+
+// 初始化主题设置
+function initTheme() {
+  // 检查本地存储的主题设置
+  const savedTheme = localStorage.getItem('theme');
+  
+  if (savedTheme === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else if (savedTheme === 'light') {
+    document.documentElement.classList.remove('dark');
+  } else {
+    // 如果没有保存的设置，使用系统偏好
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+      document.documentElement.classList.add('dark');
+    }
+  }
+  
+  setupThemeListener();
+}
+
+// 页面加载时初始化
+document.addEventListener('DOMContentLoaded', initTheme);
