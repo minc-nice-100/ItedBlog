@@ -395,7 +395,7 @@ blog.addLoadEvent(function () {
   }
 })
 
-// 切换夜间模式
+// 切换夜间模式（修改现有代码）
 blog.addLoadEvent(function () {
   const $el = document.querySelector('.footer-btn.theme-toggler')
   const $icon = $el.querySelector('.svg-icon')
@@ -417,7 +417,7 @@ blog.addLoadEvent(function () {
       document.documentElement.removeAttribute('transition')
     }, 600)
 
-    blog.initDarkMode(flag)
+    blog.initDarkMode(flag)  // 调用新的initDarkMode函数
   }
 
   blog.addEvent($el, 'click', function () {
@@ -454,4 +454,59 @@ blog.addLoadEvent(function () {
       }
     })
   }
+})
+
+/**
+ * 初始化深色模式，包括giscus样式切换
+ * @param {string} flag 'true'表示深色模式，'false'表示浅色模式
+ */
+blog.initDarkMode = function(flag) {
+  blog.darkMode = flag === 'true'
+  
+  // 切换页面主题
+  if (blog.darkMode) {
+    blog.addClass(document.documentElement, 'dark')
+    blog.removeClass(document.documentElement, 'light')
+  } else {
+    blog.addClass(document.documentElement, 'light')
+    blog.removeClass(document.documentElement, 'dark')
+  }
+  
+  // 切换giscus主题
+  blog.updateGiscusTheme(blog.darkMode)
+}
+
+/**
+ * 更新giscus评论系统的主题
+ * @param {boolean} isDarkMode 是否为深色模式
+ */
+blog.updateGiscusTheme = function(isDarkMode) {
+  const giscusFrame = document.querySelector('iframe.giscus-frame')
+  if (!giscusFrame) return
+  
+  const giscus = giscusFrame.contentWindow
+  if (!giscus) return
+  
+  // 向giscus发送主题切换消息
+  const theme = isDarkMode ? 'dark' : 'light'
+  const message = {
+    type: 'set-theme',
+    theme: theme
+  }
+  
+  giscus.postMessage(message, 'https://giscus.app')
+}
+
+// 监听giscus加载完成事件
+blog.addLoadEvent(function() {
+  // 监听giscus发送的消息
+  window.addEventListener('message', function(event) {
+    if (event.origin !== 'https://giscus.app') return
+    
+    const giscusData = event.data
+    if (giscusData && giscusData.type === 'ready') {
+      // giscus加载完成，立即应用当前主题
+      blog.updateGiscusTheme(blog.darkMode)
+    }
+  })
 })
