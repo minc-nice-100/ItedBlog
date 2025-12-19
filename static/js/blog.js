@@ -457,11 +457,45 @@ blog.addLoadEvent(function () {
 })
 
 
-function sendMessage(message) { 
-   const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame'); 
-   if (!iframe) return; 
-   iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app'); 
-} 
+// 在主文件中使用
+document.addEventListener('DOMContentLoaded', function() {
+    // 初始化giscus监听器
+    initGiscusListener();
+    
+    // 绑定按钮事件
+    document.getElementById('changeTheme')?.addEventListener('click', function() {
+        sendGiscusMessage({
+            setConfig: {
+                theme: document.body.classList.contains('dark') ? 'light' : 'dark'
+            }
+        });
+    });
+});
+
+// 简化的发送函数
+function sendMessage(message) {
+    // 立即尝试发送
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (iframe?.contentWindow) {
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        return true;
+    }
+    
+    // 如果iframe不存在，等待它加载
+    console.log('等待giscus加载...');
+    const check = setInterval(() => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe?.contentWindow) {
+            clearInterval(check);
+            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            console.log('消息已发送');
+        }
+    }, 200);
+    
+    // 10秒后超时
+    setTimeout(() => clearInterval(check), 1000);
+    return false;
+}
 
 // 检测并切换深色/浅色模式
 function toggleDarkMode() {
