@@ -30,15 +30,15 @@ tucaoUrl: https://github.com/minc-nice-100/minc-nice-100/issues/new
 # 必填字段 title: '文本' url: '链接'
 # 可选字段 target: '_blank' 新页面打开 
 menu:
-  - title: Categories
-    url: /pages/categories.html
   - title: Search
     url: /pages/search.html
+  - title: Categories
+    url: /pages/categories.html
   - title: Links
     url: /pages/links.html
-  - title: Chat
-    url: /pages/chat.html
-    target: '_blank'
+  # - title: Chat
+  #   url: /pages/chat.html
+  #   target: '_blank'
   - title: About
     url: /pages/about.html
 
