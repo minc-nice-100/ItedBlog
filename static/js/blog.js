@@ -483,48 +483,6 @@ blog.addLoadEvent(function () {
 })
 
 
-// 在主文件中使用
-document.addEventListener('DOMContentLoaded', function() {
-    // 初始化giscus监听器
-    // 监听来自giscus的消息
-    window.addEventListener('message', function(event) {
-        if (event.origin !== 'https://giscus.app') {
-            return;
-        }
-        
-        const { data } = event;
-        if (!data.giscus) {
-            return;
-        }
-        
-        const { giscus } = data;
-        
-        // 处理giscus发送的消息
-        switch (giscus.message) {
-            case 'ready':
-                console.log('blog.js|initGiscusListener()|Giscus is ready');
-                // giscus准备就绪，发送当前主题
-                toggleDarkMode();
-                break;
-                
-            case 'resize':
-                // giscus调整大小
-                console.log('blog.js|initGiscusListener()|Giscus resized:', giscus.height);
-                break;
-                
-            case 'signout':
-                // 用户退出登录
-                console.log('blog.js|initGiscusListener()|User signed out');
-                break;
-                
-            default:
-                console.log('blog.js|initGiscusListener()|Unknown message:', giscus.message);
-        }
-    });
-    // 移除重复的MutationObserver监听，避免重复通知giscus
-    // 主题变化由按钮点击和系统主题监听器统一处理
-});
-
 // 简化的发送函数 - 统一函数名
 function sendMessage2Giscus(message) {
     // 立即尝试发送
