@@ -375,12 +375,13 @@ blog.addLoadEvent(function () {
     img.style.width = imgMoveOrigin.width + 'px'
     img.style.height = imgMoveOrigin.height + 'px'
 
+    // 修复弃用事件，使用wheel替代onmousewheel
     div.onclick = restore
-    div.onmousewheel = restore
+    div.addEventListener('wheel', restore)
     div.ontouchmove = prevent
 
     img.onclick = restore
-    img.onmousewheel = restore
+    img.addEventListener('wheel', restore)
     img.ontouchmove = prevent
     img.ondragstart = prevent
 
@@ -398,9 +399,16 @@ blog.addLoadEvent(function () {
 // 切换夜间模式
 blog.addLoadEvent(function () {
   const $el = document.querySelector('.footer-btn.theme-toggler')
+  if (!$el) return
+  
   const $icon = $el.querySelector('.svg-icon')
+  if (!$icon) return
 
   blog.removeClass($el, 'hide')
+  
+  // 初始化darkMode属性
+  blog.darkMode = document.documentElement.classList.contains('dark')
+  
   if (blog.darkMode) {
     blog.removeClass($icon, 'icon-theme-light')
     blog.addClass($icon, 'icon-theme-dark')
@@ -409,15 +417,21 @@ blog.addLoadEvent(function () {
   function initDarkMode(flag) {
     blog.removeClass($icon, 'icon-theme-light')
     blog.removeClass($icon, 'icon-theme-dark')
-    if (flag === 'true') blog.addClass($icon, 'icon-theme-dark')
-    else blog.addClass($icon, 'icon-theme-light')
+    if (flag === 'true') {
+      blog.addClass($icon, 'icon-theme-dark')
+      blog.darkMode = true
+    } else {
+      blog.addClass($icon, 'icon-theme-light')
+      blog.darkMode = false
+    }
 
     document.documentElement.setAttribute('transition', '')
     setTimeout(function () {
       document.documentElement.removeAttribute('transition')
     }, 600)
 
-    blog.initDarkMode(flag)
+    // 调用主题切换函数
+    toggleDarkMode()
   }
 
   blog.addEvent($el, 'click', function () {
@@ -499,7 +513,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 主题变化由按钮点击和系统主题监听器统一处理
 });
 
-// 简化的发送函数
+// 简化的发送函数 - 统一函数名
 function sendMessage2Giscus(message) {
     // 立即尝试发送
     const iframe = document.querySelector('iframe.giscus-frame');
@@ -509,13 +523,13 @@ function sendMessage2Giscus(message) {
     }
     
     // 如果iframe不存在，等待它加载
-    console.log('blog.js|sendMessage()|Waiting for giscus iframe to load...');
+    console.log('blog.js|sendMessage2Giscus()|Waiting for giscus iframe to load...');
     const check = setInterval(() => {
         const iframe = document.querySelector('iframe.giscus-frame');
         if (iframe?.contentWindow) {
             clearInterval(check);
             iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-            console.log('blog.js|sendMessage()|Message sent successfully.');
+            console.log('blog.js|sendMessage2Giscus()|Message sent successfully.');
         }
     }, 200);
     
@@ -589,5 +603,5 @@ function initTheme() {
   setupThemeListener();
 }
 
-// 页面加载时初始化
-document.addEventListener('DOMContentLoaded', initTheme);
+// 页面加载时初始化 - 移除重复的监听器
+// document.addEventListener('DOMContentLoaded', initTheme); // 注释掉重复的监听器
