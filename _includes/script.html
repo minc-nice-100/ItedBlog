@@ -1,22 +1,6 @@
 {%- assign buildAt = site.time | date: "%Y%m%d%H%M%S" -%}
 <script type="text/javascript" src="{{site.baseurl}}/static/js/blog.js?t={{ buildAt }}"></script>
 <script type="text/javascript" src="{{site.baseurl}}/static/js/search.js?t={{ buildAt }}"></script>
-<script src="https://giscus.app/client.js"
-        data-repo="minc-nice-100/ItedBlog"
-        data-repo-id="R_kgDOO0JCdQ"
-        data-category="Comments"
-        data-category-id="DIC_kwDOO0JCdc4Cz9Wy"
-        data-mapping="og:title"
-        data-strict="1"
-        data-reactions-enabled="1"
-        data-emit-metadata="1"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>
 {%- if site.extClickEffect %}
 <!-- 点击页面文字冒出特效 -->
 <script>
