@@ -460,20 +460,47 @@ blog.addLoadEvent(function () {
 // 在主文件中使用
 document.addEventListener('DOMContentLoaded', function() {
     // 初始化giscus监听器
-    initGiscusListener();
-    
-    // 绑定按钮事件
-    document.getElementById('changeTheme')?.addEventListener('click', function() {
-        sendGiscusMessage({
-            setConfig: {
-                theme: document.body.classList.contains('dark') ? 'light' : 'dark'
-            }
-        });
+    // 监听来自giscus的消息
+    window.addEventListener('message', function(event) {
+        if (event.origin !== 'https://giscus.app') {
+            return;
+        }
+        
+        const { data } = event;
+        if (!data.giscus) {
+            return;
+        }
+        
+        const { giscus } = data;
+        
+        // 处理giscus发送的消息
+        switch (giscus.message) {
+            case 'ready':
+                console.log('blog.js|initGiscusListener()|Giscus is ready');
+                // giscus准备就绪，发送当前主题
+                toggleDarkMode();
+                break;
+                
+            case 'resize':
+                // giscus调整大小
+                console.log('blog.js|initGiscusListener()|Giscus resized:', giscus.height);
+                break;
+                
+            case 'signout':
+                // 用户退出登录
+                console.log('blog.js|initGiscusListener()|User signed out');
+                break;
+                
+            default:
+                console.log('blog.js|initGiscusListener()|Unknown message:', giscus.message);
+        }
     });
+    // 移除重复的MutationObserver监听，避免重复通知giscus
+    // 主题变化由按钮点击和系统主题监听器统一处理
 });
 
 // 简化的发送函数
-function sendMessage(message) {
+function sendMessage2Giscus(message) {
     // 立即尝试发送
     const iframe = document.querySelector('iframe.giscus-frame');
     if (iframe?.contentWindow) {
@@ -482,17 +509,16 @@ function sendMessage(message) {
     }
     
     // 如果iframe不存在，等待它加载
-    console.log('等待giscus加载...');
+    console.log('blog.js|sendMessage()|Waiting for giscus iframe to load...');
     const check = setInterval(() => {
         const iframe = document.querySelector('iframe.giscus-frame');
         if (iframe?.contentWindow) {
             clearInterval(check);
             iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-            console.log('消息已发送');
+            console.log('blog.js|sendMessage()|Message sent successfully.');
         }
     }, 200);
     
-    // 10秒后超时
     setTimeout(() => clearInterval(check), 1000);
     return false;
 }
@@ -502,7 +528,7 @@ function toggleDarkMode() {
   const isDarkMode = document.documentElement.classList.contains('dark');
   const theme = isDarkMode ? 'dark' : 'light';
   
-  sendMessage({ 
+  sendMessage2Giscus({ 
     setConfig: { 
       theme: theme
     } 
