@@ -132,7 +132,7 @@ blog.ajax = function (option, success, fail) {
   } else {
     xmlHttp = new ActiveXObject('Microsoft.XMLHTTP')
   }
-  var url = option.url
+var url = option.url
   var method = (option.method || 'GET').toUpperCase()
   var sync = option.sync === false ? false : true
   var timeout = option.timeout || 10000
@@ -218,7 +218,7 @@ blog.initClickEffect = function (textArr) {
       dom.style.webkitTransform = 'translateY(-26px)'
     }, 20)
 
-    setTimeout(function () {
+setTimeout(function () {
       document.body.removeChild(dom)
       dom = null
     }, 520)
@@ -414,38 +414,50 @@ blog.addLoadEvent(function () {
     blog.addClass($icon, 'icon-theme-dark')
   }
 
-  function initDarkMode(flag) {
-    blog.removeClass($icon, 'icon-theme-light')
-    blog.removeClass($icon, 'icon-theme-dark')
-    if (flag === 'true') {
-      blog.addClass($icon, 'icon-theme-dark')
-      blog.darkMode = true
-    } else {
+  function toggleTheme() {
+    if (blog.darkMode) {
+      blog.removeClass($icon, 'icon-theme-dark')
       blog.addClass($icon, 'icon-theme-light')
       blog.darkMode = false
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+    } else {
+      blog.removeClass($icon, 'icon-theme-light')
+      blog.addClass($icon, 'icon-theme-dark')
+      blog.darkMode = true
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
     }
 
     document.documentElement.setAttribute('transition', '')
     setTimeout(function () {
       document.documentElement.removeAttribute('transition')
     }, 600)
-
-    // 调用主题切换函数
-    toggleDarkMode()
+    
+    // 向giscus发送主题切换消息
+    const theme = blog.darkMode ? 'dark' : 'light'
+    sendMessage2Giscus({ 
+      setConfig: { 
+        theme: theme
+      } 
+    })
   }
 
-  blog.addEvent($el, 'click', function () {
-    const flag = blog.darkMode ? 'false' : 'true'
-    localStorage.darkMode = flag
-    initDarkMode(flag)
-  })
+  blog.addEvent($el, 'click', toggleTheme)
 
   if (window.matchMedia) {
     window.matchMedia('(prefers-color-scheme: dark)').addListener(function (ev) {
       const systemDark = ev.target.matches
       if (systemDark !== blog.darkMode) {
-        localStorage.darkMode = '' // 清除用户设置
-        initDarkMode(systemDark ? 'true' : 'false')
+        localStorage.removeItem('theme') // 清除用户设置
+        if (systemDark) {
+          document.documentElement.classList.add('dark')
+          blog.darkMode = true
+        } else {
+          document.documentElement.classList.remove('dark')
+          blog.darkMode = false
+        }
+        toggleTheme()
       }
     })
   }
@@ -537,71 +549,10 @@ function sendMessage2Giscus(message) {
     return false;
 }
 
-// 检测并切换深色/浅色模式
-function toggleDarkMode() {
-  const isDarkMode = document.documentElement.classList.contains('dark');
-  const theme = isDarkMode ? 'dark' : 'light';
-  
-  sendMessage2Giscus({ 
-    setConfig: { 
-      theme: theme
-    } 
-  });
-}
-
-// 监听系统主题变化
-function setupThemeListener() {
-  // 检测系统主题偏好
-  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  
-  // 初始设置
-  toggleDarkMode();
-  
-  // 监听系统主题变化
-  mediaQuery.addEventListener('change', (e) => {
-    if (e.matches) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    toggleDarkMode();
-  });
-}
-
-// 手动切换主题的函数
-function switchTheme() {
-  const isDarkMode = document.documentElement.classList.contains('dark');
-  
-  if (isDarkMode) {
-    document.documentElement.classList.remove('dark');
-    localStorage.setItem('theme', 'light');
-  } else {
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
-  }
-  
-  toggleDarkMode();
-}
-
-// 初始化主题设置
-function initTheme() {
-  // 检查本地存储的主题设置
-  const savedTheme = localStorage.getItem('theme');
-  
-  if (savedTheme === 'dark') {
-    document.documentElement.classList.add('dark');
-  } else if (savedTheme === 'light') {
-    document.documentElement.classList.remove('dark');
-  } else {
-    // 如果没有保存的设置，使用系统偏好
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDark) {
-      document.documentElement.classList.add('dark');
-    }
-  }
-  
-  setupThemeListener();
-}
-
-// 页面加载时初始化 - 移除重复的监听器
-// document.addEventListener('DOMContentLoaded', initTheme); // 注释掉重复的监听器
+// 移除以下不必要的代码块：
+// - giscus消息监听器
+// - toggleDarkMode函数
+// - setupThemeListener函数
+// - switchTheme函数
+// - initTheme函数
+// - 重复的DOMContentLoaded监听器
