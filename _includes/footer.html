@@ -1,13 +1,12 @@
 <footer class="footer">
   <div style="text-align: center;">
-    <span>{{ site.footerText }}</span>
-    <a href="{{ site.baseurl }}/static/xml/rss.xml">RSS</a>
+    <span>{{ site.footerText }}</span>&nbsp;|&nbsp;<a href="{{ site.baseurl }}/static/xml/rss.xml">RSS</a>
 
     {%- if site.extCount %}
       <span>总访问量</span>
       <span id="busuanzi_value_site_pv"></span>
     {% endif %}
-    <p style="font-size:0.8rem; opacity:0.7;">
+    <p style="color: #999">
       Built with ❤ • Commit {{ site.commit_short }}
     </p>
   </div>
