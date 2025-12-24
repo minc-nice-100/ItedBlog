@@ -139,11 +139,33 @@
 .page-post table tr:nth-child(even) {
   background-color: #f9f9f9;
 }
+/* 优化表格水平滚动 */
 .page-post .table-container {
-  overflow: auto;
+  overflow-x: auto; /* 明确设置水平滚动 */
+  overflow-y: hidden; /* 隐藏垂直滚动条（如果不需要） */
   margin: 14px 0;
   border: 1px solid #dddddd;
+  -webkit-overflow-scrolling: touch; /* 提升移动端滚动体验 */
 }
+
+/* 确保表格有足够的最小宽度以容纳内容 */
+.page-post table {
+  min-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #dddddd;
+  table-layout: auto; /* 自动列宽，根据内容调整 */
+}
+
+/* 确保单元格内容不会过度挤压 */
+.page-post th,
+.page-post td {
+  padding: 8px 12px; /* 增加内边距，提升可读性 */
+  text-align: left;
+  white-space: nowrap; /* 防止内容换行，保持列宽稳定 */
+  vertical-align: top; /* 顶部对齐，使内容更整齐 */
+}
+
 .page-post .table-container table {
   margin: 0;
   border: 0;

@@ -122,3 +122,29 @@
     font-size: 14px;
   }
 }
+
+/* page.css 中没有表格相关样式，主要包含列表、分类和搜索页面的样式 */
+
+/* 如果需要在这些页面中也应用表格水平滚动样式，可以添加以下代码 */
+.table-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 14px 0;
+  border: 1px solid #dddddd;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-container table {
+  min-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: auto;
+}
+
+.table-container th,
+.table-container td {
+  padding: 8px 12px;
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: top;
+}
