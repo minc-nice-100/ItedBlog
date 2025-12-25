@@ -9,3 +9,4 @@ gem "bigdecimal"
 gem "psych", "< 5"
 gem "jekyll-regex-replace"
 gem "kramdown-parser-gfm"   # 加上这一行就完事了！
+gem 'jekyll-loading-lazy'
