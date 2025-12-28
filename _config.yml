@@ -3,8 +3,6 @@ encoding: utf-8
 plugins:
   - jekyll-regex-replace
   - jekyll-loading-lazy
-  - image_figure
-  - cloudflare_commit
 
 # SEO相关信息
 title: Ited Blog
