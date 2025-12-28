@@ -184,3 +184,20 @@
     margin: 15px 0;
   }
 }
+
+/* Figure样式 - 使用相对单位 */
+.page-post figure {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+.page-post figcaption {
+  font-size: 0.85em;
+  color: #666;
+  margin-top: 0.6em;
+  line-height: 1.4;
+}
+
+.dark .page-post figcaption {
+  color: #aaa;
+}
