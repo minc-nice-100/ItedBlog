@@ -18,28 +18,29 @@
     {{ content }}
   </div>
   
-
-  <div class="giscus" id="giscus">
-    <div class="giscus-loading" id="giscus-loading" style="text-align: center; color: #666">
-    Giscus loading...
+{% if site.giscus.enabled != false %}
+    <div class="giscus" id="giscus">
+      <div class="giscus-loading" id="giscus-loading" style="text-align: center; color: #666">
+      Giscus loading...
     </div>
-  </div>
-  <script src="https://giscus.app/client.js"
-        data-repo="minc-nice-100/ItedBlog"
-        data-repo-id="R_kgDOO0JCdQ"
-        data-category="Comments"
-        data-category-id="DIC_kwDOO0JCdc4Cz9Wy"
-        data-mapping="og:title"
-        data-strict="1"
-        data-reactions-enabled="1"
-        data-emit-metadata="1"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>
+    </div>
+    <script src="https://giscus.app/client.js"
+          data-repo="minc-nice-100/ItedBlog"
+          data-repo-id="R_kgDOO0JCdQ"
+          data-category="Comments"
+          data-category-id="DIC_kwDOO0JCdc4Cz9Wy"
+          data-mapping="og:title"
+          data-strict="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="1"
+          data-input-position="top"
+          data-theme="preferred_color_scheme"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+  {% endif %}
   {% if site.extAdsense -%}
   <div class="adsense" style="overflow: hidden;">
     {% include ext-adsense.html -%}
