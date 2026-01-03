@@ -17,7 +17,15 @@ title: Links
 <ul>
   {%- for link in site.links %}
   <li>
-    <p><a href="{{ link.url }}" title="{{ link.desc }}" target="_blank" >{{ link.title }}</a></p>
+    {%- if link.avatar %}
+    <img src="{{ link.avatar }}" alt="{{ link.title }}" style="width: 50px; height: 50px; border-radius: 50%; display: inline-block; vertical-align: middle; margin-right: 10px;">
+    {%- endif %}
+    <div style="display: inline-block; vertical-align: middle;">
+      <p><a href="{{ link.url }}" title="{{ link.desc }}" target="_blank" >{{ link.title }}</a></p>
+      {%- if link.description %}
+      <p style="margin: 5px 0 0 0; font-size: 14px; color: #666;">{{ link.description }}</p>
+      {%- endif %}
+    </div>
   </li>
   {%- endfor %}
 </ul>

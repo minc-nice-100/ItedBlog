@@ -60,12 +60,25 @@ extCount: false
 links:
   - title: Makabaka1880的博客
     url: https://makabaka1880.xyz
+    avatar: https://bucket.itedev.com/blog/20260103171231537.png
+    description: 与我共事的极强后端
   - title: 唤青映记
     url: https://www.eees.blog
+    avatar: https://bucket.itedev.com/blog/20260103171330976.png
+    description: 与我共事的极强前端
   - title: 晚夜的个人博客
     url: https://www.iczrx.cn
+    avatar: https://bucket.itedev.com/blog/20260103171439945.png
+    description: 做好量变的准备，促进事物的质变。
   - title: Garden of Outlier
     url: https://chlo.is
+    avatar: https://bucket.itedev.com/blog/20260103171537051.png
+    description: An Element-chan who writes.
   - title: liuzhen932 的小窝
     url: https://blog.liuzhen932.top
-
+    avatar: https://bucket.itedev.com/blog/20260103171629163.png
+    description: 只要愿意去做，人无所不通
+  - title: Exyone Blog
+    url: https://www.exyone.me
+    avatar: https://bucket.itedev.com/blog/20260103171737360.webp
+    description: 不会前端的.NET程序员不是好Ruby程序员
