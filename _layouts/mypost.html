@@ -3,20 +3,30 @@
 {% include head.html -%}
 <body>
 {% include header.html -%}
-<div class="page page-post">
-  <h1 class="title" id="{{ page.title }}">{{ page.title }}</h1>
-  {% if page.date %}
-  <div class="subtitle">
-    <span>Published by {{site.author}} on {{ page.date | date: "%Y.%m.%d" }}</span>
-    {%- if site.extCount %}
-      <span>Page views</span>
-      <span id="busuanzi_value_page_pv"></span>
-    {% endif %}
-  </div>
-  {% endif %}
-  <div class="post">
-    {{ content }}
-  </div>
+  <article>
+    <header>
+      <h1 class="title" id="{{ page.title }}">{{ page.title }}</h1>
+      {% if page.date %}
+      <div class="subtitle">
+        <span>Published by {{site.author}} on <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time></span>
+        {%- if site.extCount %}
+          <span>Page views</span>
+          <span id="busuanzi_value_page_pv"></span>
+        {% endif %}
+      </div>
+      {% endif %}
+    </header>
+    
+    <main class="post-content">
+      {{ content }}
+    </main>
+    
+    <footer>
+      {% if page.tags %}
+      <p>Tags: {% for tag in page.tags %}{{ tag }}{% endfor %}</p>
+      {% endif %}
+    </footer>
+  </article>
   
 {% if site.giscus.enabled != false %}
     <div class="giscus" id="giscus">
@@ -46,7 +56,6 @@
     {% include ext-adsense.html -%}
   </div>
   {% endif %}
-</div>
 {% include footer.html -%}
 {% include script.html -%}
 </body>

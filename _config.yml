@@ -4,6 +4,7 @@ plugins:
   - jekyll-regex-replace
   - jekyll-loading-lazy
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # SEO相关信息
 title: Ited Blog
