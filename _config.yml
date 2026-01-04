@@ -87,3 +87,7 @@ links:
     url: https://www.exyone.me
     avatar: https://bucket.itedev.com/blog/20260103171737360.webp
     description: 不会前端的.NET程序员不是好Ruby程序员
+
+
+incremental: true
+future: false
