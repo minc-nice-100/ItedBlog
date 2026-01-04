@@ -12,3 +12,4 @@ gem "kramdown-parser-gfm"   # 加上这一行就完事了！
 gem 'jekyll-loading-lazy'
 gem 'jekyll-seo-tag'
 gem 'jekyll-sitemap'
+gem 'jekyll-feed'
