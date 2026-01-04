@@ -3,6 +3,7 @@
 {% include head.html -%}
 <body>
 {% include header.html -%}
+<main class="page page-post">
   <article>
     <header>
       <h1 class="title" id="{{ page.title }}">{{ page.title }}</h1>
@@ -17,13 +18,13 @@
       {% endif %}
     </header>
     
-    <main class="post-content">
+    <div class="post">
       {{ content }}
-    </main>
+    </div>
     
     <footer>
       {% if page.tags %}
-      <p>Tags: {% for tag in page.tags %}{{ tag }}{% endfor %}</p>
+      <p>标签：{% for tag in page.tags %}{{ tag }}{% endfor %}</p>
       {% endif %}
     </footer>
   </article>
@@ -56,6 +57,7 @@
     {% include ext-adsense.html -%}
   </div>
   {% endif %}
+</main>
 {% include footer.html -%}
 {% include script.html -%}
 </body>
