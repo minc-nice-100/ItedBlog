@@ -3,6 +3,7 @@ encoding: utf-8
 plugins:
   - jekyll-regex-replace
   - jekyll-loading-lazy
+  - jekyll-seo-tag
 
 # SEO相关信息
 title: Ited Blog
@@ -10,7 +11,9 @@ description: You are good enough.
 keywords: Ited, blog, tech, programming, coding, life, 博客, 技术, 编程, 编码, 生活, minc_nice_100, 土拨鼠
 author: minc_nice_100
 footerText: 'Copr. 2022 Ited Blog'
-
+url: https://www.itedev.com
+logo: /static/img/logo.jpg
+lang: zh-CN
 # 这些不要动
 permalink: /posts/:year/:month/:day/:title.html
 kramdown:
