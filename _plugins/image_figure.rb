@@ -3,8 +3,8 @@
 module Kramdown
   module Parser
     class KramdownFigure < Kramdown::Parser::Kramdown
-      # 块级图片的正则（kramdown 原有定义）
-      IMAGE_START = /^!\[([^\]]*)\]\((#{URL_REGEX_CHARS}+)(?: +["(](.+?)[")])?\)/
+      # 块级图片的正则（修复版，不依赖已移除的 URL_REGEX_CHARS）
+      IMAGE_START = /^!\[([^\]]*)\]\(([^)\s]+)(?:\s+["'(](.+?)["'")])?\)/
 
       def initialize(source, options)
         super
