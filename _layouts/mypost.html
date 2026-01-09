@@ -22,11 +22,6 @@
       {{ content }}
     </div>
     
-    <footer>
-      {% if page.tags %}
-      <p>标签：{% for tag in page.tags %}{{ tag }}{% endfor %}</p>
-      {% endif %}
-    </footer>
   </article>
   
 {% if site.giscus.enabled != false %}
