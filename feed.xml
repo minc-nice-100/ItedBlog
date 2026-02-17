@@ -5,13 +5,14 @@ layout: null
 <rss version="2.0" 
      xmlns:atom="http://www.w3.org/2005/Atom"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>{{ site.title | xml_escape }}</title>
     <link>{{ site.url | xml_escape }}</link>
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml"/>
     <description>{{ site.description | xml_escape }}</description>
-    <language>{{ site.lang | default: 'zh-CN' | xml_escape }}</language>
+    <language>{{ site.lang | default: 'en' | xml_escape }}</language>
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     
@@ -23,44 +24,59 @@ layout: null
       <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
       <dc:creator>{{ site.author | default: site.title | xml_escape }}</dc:creator>
       
+      <!-- Categories: text only -->
       {% for category in post.categories %}
       <category>{{ category | xml_escape }}</category>
       {% endfor %}
       
+      <!-- Tags: text only -->
       {% for tag in post.tags %}
       <category>{{ tag | xml_escape }}</category>
       {% endfor %}
       
+      <!-- Plain text summary -->
       <description>
         <![CDATA[
           {% if post.excerpt %}
             {{ post.excerpt | strip_html | truncate: 200 }}
           {% else %}
             {{ post.content | strip_html | truncate: 200 }}
-          {% endif %}
-          ...
+          {% endif %}...
         ]]>
       </description>
       
+      <!-- Full content with formatting preserved, original link at bottom -->
       <content:encoded>
         <![CDATA[
-          <h1>{{ post.title | xml_escape }}</h1>
-          <p><small>{{ post.date | date: "%Y-%m-%d" }} | 
-          {% if post.categories.size > 0 %}
-            分类: {{ post.categories | join: ', ' | xml_escape }}
-          {% endif %}
-          </small></p>
-          
-          {{ post.content }}
-          
-          <hr>
-          <p style="color: #666; font-style: italic;">
-            原文链接: <a href="{{ site.url }}{{ post.url | xml_escape }}">{{ site.url }}{{ post.url | xml_escape }}</a>
-          </p>
+          <article>
+            <header>
+              <h1>{{ post.title | xml_escape }}</h1>
+              <p class="meta">
+                Published on {{ post.date | date: "%B %d, %Y" }}
+                {% if post.categories.size > 0 %}
+                | Categories: {{ post.categories | join: ', ' | xml_escape }}
+                {% endif %}
+              </p>
+            </header>
+            
+            {{ post.content }}
+            
+            {% if post.tags.size > 0 %}
+            <hr>
+            <p>Tags: {{ post.tags | join: ' · ' | xml_escape }}</p>
+            {% endif %}
+            
+            <!-- Original link preserved -->
+            <hr>
+            <p style="color: #666; font-style: italic;">
+              🔗 Original article: <a href="{{ site.url }}{{ post.url | xml_escape }}">{{ site.url }}{{ post.url | xml_escape }}</a>
+            </p>
+          </article>
         ]]>
       </content:encoded>
       
       {% if post.image %}
+      <media:thumbnail url="{{ site.url }}{{ post.image | relative_url }}"/>
       <enclosure url="{{ site.url }}{{ post.image | relative_url }}" type="image/jpeg" length="0"/>
       {% endif %}
     </item>
