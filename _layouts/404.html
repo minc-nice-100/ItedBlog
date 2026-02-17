@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+{% include head.html -%}
+<body>
+{% include header.html -%}
+<main class="page page-post">
+  <article>
+    <header>
+      <h1 class="title" id="{{ page.title }}">{{ page.title }}</h1>
+    </header>
+    
+    <div class="post">
+      {{ content }}
+    </div>
+    
+  </article>
+  {% if site.extAdsense -%}
+  <div class="adsense" style="overflow: hidden;">
+    {% include ext-adsense.html -%}
+  </div>
+  {% endif %}
+</main>
+{% include footer.html -%}
+{% include script.html -%}
+</body>
+</html>
