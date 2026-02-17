@@ -2,9 +2,7 @@
 layout: null
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"
-      xmlns:dc="http://purl.org/dc/elements/1.1/"
-      xmlns:media="http://search.yahoo.com/mrss/">
+<feed xmlns="http://www.w3.org/2005/Atom">
   
   <title>{{ site.title | xml_escape }}</title>
   <subtitle>{{ site.description | xml_escape }}</subtitle>
@@ -16,12 +14,7 @@ layout: null
   <author>
     <name>{{ site.author | default: site.title | xml_escape }}</name>
     {% if site.email %}<email>{{ site.email | xml_escape }}</email>{% endif %}
-    <uri>{{ site.url }}/</uri>
   </author>
-  
-  {% if site.lang %}
-  <language>{{ site.lang | xml_escape }}</language>
-  {% endif %}
   
   {% for post in site.posts limit:50 %}
   <entry>
@@ -37,17 +30,16 @@ layout: null
     </author>
     {% endif %}
     
-    <!-- Categories: text only, no links -->
+    <!-- 分类和标签用 dc:subject (更标准) -->
     {% for category in post.categories %}
     <category term="{{ category | xml_escape }}"/>
     {% endfor %}
     
-    <!-- Tags: text only, no links -->
     {% for tag in post.tags %}
     <category term="{{ tag | xml_escape }}"/>
     {% endfor %}
     
-    <!-- Summary (feed reader list view) - plain text -->
+    <!-- 摘要 - 明确声明为文本类型 -->
     <summary type="text">
       {% if post.excerpt %}
         {{ post.excerpt | strip_html | truncate: 200 }}
@@ -56,7 +48,7 @@ layout: null
       {% endif %}...
     </summary>
     
-    <!-- Full content with formatting preserved, original link at bottom -->
+    <!-- 完整内容 - 声明为 HTML 类型 -->
     <content type="html">
       <![CDATA[
         <article>
@@ -77,7 +69,6 @@ layout: null
           <p>Tags: {{ post.tags | join: ' · ' | xml_escape }}</p>
           {% endif %}
           
-          <!-- Original link preserved -->
           <hr>
           <p style="color: #666; font-style: italic;">
             🔗 Original article: <a href="{{ site.url }}{{ post.url | xml_escape }}">{{ site.url }}{{ post.url | xml_escape }}</a>
@@ -85,12 +76,6 @@ layout: null
         </article>
       ]]>
     </content>
-    
-    <!-- Featured image (if available) -->
-    {% if post.image %}
-    <media:thumbnail url="{{ site.url }}{{ post.image | relative_url }}"/>
-    <media:content url="{{ site.url }}{{ post.image | relative_url }}" type="image/jpeg"/>
-    {% endif %}
     
   </entry>
   {% endfor %}
