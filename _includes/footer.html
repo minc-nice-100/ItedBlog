@@ -1,14 +1,20 @@
 <footer class="footer">
   <div style="text-align: center;">
-    <span>{{ site.footerText }}</span>&nbsp;|&nbsp;<a href="{{ site.baseurl }}/feed.xml">RSS</a>
+    <span>{{ site.footerText }}</span>
+    <span style="color: #ccc; margin: 0 8px;">|</span>
+    <a href="{{ site.baseurl }}/feed.xml">RSS</a>
+    <span style="color: #ccc; margin: 0 8px;">|</span>
+    <a href="{{ site.baseurl }}/atom.xml">Atom</a>
 
     {%- if site.extCount %}
       <span>总访问量</span>
       <span id="busuanzi_value_site_pv"></span>
     {% endif %}
-    <p style="color: #999">
-      Built with ❤ • Commit {{ site.commit_short }}
-    </p>
+  <p style="color: #999; margin-top: 12px;">
+    Built with ❤ 
+    <span style="color: #666; font-size: 18px; font-weight: bold; margin: 0 6px;">•</span>
+    Commit {{ site.commit_short }}
+  </p>
   </div>
   <div class="footer-btn theme-toggler hide">
     <i class="svg-icon icon-theme-light"></i>
