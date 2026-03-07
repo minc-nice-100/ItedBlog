@@ -3,6 +3,18 @@ layout: mypost
 title: Links
 ---
 
+## 站内链接
+
+|         Name          |                            Link                            |
+| :-------------------: | :--------------------------------------------------------: |
+| Let's Build Something | [/pages/lets-build-something](/pages/lets-build-something) |
+|      Status Page      |  [https://status.itedev.com/](https://status.itedev.com/)  |
+|      千字网 CDN       |   [https://hanzi.itedev.com/](https://hanzi.itedev.com/)   |
+
+---
+
+## 友链
+
 这是友链!!!!! 申请友链请评论区留言.
 
 <audio title="雨落花开 - WillYoga王颢霖,欧阳潇枫.mp3" controls src="https://bucket.itedev.com/blog/9a5e1d5f77f948fbaa563bd899f255f6.mp3" ></audio>
