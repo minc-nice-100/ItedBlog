@@ -5,6 +5,7 @@ plugins:
   - jekyll-loading-lazy
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-last-modified-at
 
 # SEO相关信息
 title: Ited Blog
