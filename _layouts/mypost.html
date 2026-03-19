@@ -9,7 +9,7 @@
       <h1 class="title" id="{{ page.title }}">{{ page.title }}</h1>
       {% if page.date %}
       <div class="subtitle">
-        <span>Published by {{site.author}} on <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>{% if last_modified %}, last modified on <time datetime="{{ last_modified | date_to_xmlschema }}">{{ last_modified | date: "%Y.%m.%d" }}</time>{% endif %}.</span>
+        <span>Published by {{site.author}} on <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time></span>
         {%- if site.extCount %}
           <span>Page views</span>
           <span id="busuanzi_value_page_pv"></span>
