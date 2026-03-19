@@ -19,7 +19,7 @@ title: 首页
           </div>
           {% if post.excerpt or post.description %}  <!-- 如果有摘要或描述 -->
           <div class="excerpt">
-            {{ post.excerpt | default: post.description | strip_html | truncate: 150 }}  <!-- 显示摘要，限制长度 -->
+            {{ post.excerpt | default: post.description | strip_html | truncate: 150 }}......  <!-- 显示摘要，限制长度 -->
           </div>
           {% endif %}
           <div class="categories">
