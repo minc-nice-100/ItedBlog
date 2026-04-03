@@ -9,38 +9,30 @@
 }
 .list-post li {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 12px 0;
-  border-bottom: 1px solid #f0f0f0;
+  align-items: center;
+  padding: 8px 0;
 }
 .list-post li .date {
   color: #666666;
   font-size: 14px;
-  margin-bottom: 4px;
+  flex-shrink: 0;
+  margin-right: 10px;
 }
 .list-post li .title {
-  margin-bottom: 6px;
+  width: 0;
+  flex-grow: 1;
+  padding: 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .list-post li .title a {
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
-}
-.list-post li .excerpt {
-  font-size: 14px;
-  color: #666666;
-  line-height: 1.5;
-  margin-bottom: 8px;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  font-size: 15px;
 }
 .list-post li .categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-shrink: 0;
+  padding: 3px 0;
+  margin-left: 10px;
 }
 .list-post li .categories a {
   font-size: 12px;
