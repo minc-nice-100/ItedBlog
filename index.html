@@ -13,17 +13,11 @@ title: 首页
       <ul>
     {%- endif %}
         <li>
-          <span class="date">{{ post.date | date: "%Y.%m.%d" }}</span>  <!-- 发布日期 -->
+          <span class="date">{{ post.date | date: "%Y.%m.%d" }}</span>
           <div class="title">
-            <a href="{{ site.baseurl | append: post.url }}" class="hover-underline">{{ post.title }}</a>  <!-- 文章标题链接 -->
+            <a href="{{ site.baseurl | append: post.url }}" class="hover-underline">{{ post.title }}</a>
           </div>
-          {% if post.excerpt or post.description %}  <!-- 如果有摘要或描述 -->
-          <div class="excerpt">
-            {{ post.excerpt | default: post.description | strip_html | truncate: 150 }}......  <!-- 显示摘要，限制长度 -->
-          </div>
-          {% endif %}
           <div class="categories">
-            <!-- 显示文章所属分类 -->
             {% for categorie in post.categories -%}
             <a href="{{site.baseurl}}/pages/categories.html#{{ categorie }}" class="hover-underline">{{ categorie }}</a>
             {%- endfor %}
