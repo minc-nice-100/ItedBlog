@@ -30,7 +30,6 @@ title: Things We've Built
 - Full-stack Managed: [ech0.app](https://www.ech0.app/) 
 - Full-stack Managed: [vae.hk](https://www.vae.hk/)
 - Full-stack Managed: [merrin.cc](https://www.merrin.cc/)
-- Full-stack Managed: [hanzi.itedev.com](https://hanzi.itedev.com/)
 
 ---
 
