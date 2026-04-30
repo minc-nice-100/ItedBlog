@@ -5,11 +5,12 @@ title: Links
 
 ## 站内链接
 
-|         Name          |                            Link                            |
-| :-------------------: | :--------------------------------------------------------: |
-| Let's Build Something | [/pages/lets-build-something](/pages/lets-build-something) |
-|      Status Page      |  [https://status.itedev.com/](https://status.itedev.com/)  |
-|      千字网 CDN       |   [https://hanzi.itedev.com/](https://hanzi.itedev.com/)   |
+|         Name          |                             Link                             |
+| :-------------------: | :----------------------------------------------------------: |
+| Let's Build Something |  [/pages/lets-build-something](/pages/lets-build-something)  |
+|      Status Page      |   [https://status.itedev.com/](https://status.itedev.com/)   |
+|      千字网 CDN       |    [https://hanzi.itedev.com/](https://hanzi.itedev.com/)    |
+|         电台          | https://customer-izpvy0k0ry14gaxa.cloudflarestream.com/40ca7d093506603f061576b4c9161885/iframe |
 
 ---
 
