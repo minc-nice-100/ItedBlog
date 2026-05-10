@@ -462,7 +462,7 @@ blog.addLoadEvent(function () {
     const iframe = document.querySelector('iframe.giscus-frame')
     if (!iframe || !iframe.contentWindow) return
     const isDark = document.documentElement.classList.contains('dark')
-    iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: isDark ? 'dark' : 'light' } } }, 'https://giscus.app')
+    iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: isDark ? 'dark' : 'light' } } }, '*')
   }
 
   // 初始同步（延迟确保 giscus 已加载）
