@@ -455,3 +455,26 @@ blog.addLoadEvent(function () {
     })
   }
 })
+
+// Giscus 主题同步
+blog.addLoadEvent(function () {
+  function sendGiscusTheme() {
+    const iframe = document.querySelector('iframe.giscus-frame')
+    if (!iframe || !iframe.contentWindow) return
+    const isDark = document.documentElement.classList.contains('dark')
+    iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: isDark ? 'dark' : 'light' } } }, 'https://giscus.app')
+  }
+
+  // 初始同步（延迟确保 giscus 已加载）
+  setTimeout(sendGiscusTheme, 1000)
+
+  // 监听 html 元素 class 变化
+  const observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (mutation.attributeName === 'class') {
+        sendGiscusTheme()
+      }
+    })
+  })
+  observer.observe(document.documentElement, { attributes: true })
+})

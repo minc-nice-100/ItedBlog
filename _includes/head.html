@@ -38,12 +38,6 @@
         else this.darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
         document.documentElement.className = this.darkMode ? 'dark' : ''
         document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkMode ? '#2D2E32' : '#FFFFFF')
-        this.setGiscusTheme && this.setGiscusTheme()
-      },
-      setGiscusTheme: function () {
-        const iframe = document.querySelector('iframe.giscus-frame')
-        if (!iframe) return
-        iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: this.darkMode ? 'dark' : 'light' } } }, 'https://giscus.app')
       }
     }
     blog.initDarkMode(localStorage.darkMode)
