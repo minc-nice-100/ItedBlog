@@ -9,8 +9,8 @@ title: Links
 | :-------------------: | :--------------------------------------------------------: |
 | Let's Build Something | [/pages/lets-build-something](/pages/lets-build-something) |
 |      Status Page      |  [https://status.itedev.com/](https://status.itedev.com/)  |
-|      千字网 CDN       |   [https://hanzi.itedev.com/](https://hanzi.itedev.com/)   |
 | China Mirror Domains  |                   [/pages/cn](/pages/cn)                   |
+|      千字网 CDN       |   [https://hanzi.itedev.com/](https://hanzi.itedev.com/)   |
 
 ---
 
