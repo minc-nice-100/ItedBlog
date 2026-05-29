@@ -22,7 +22,7 @@ title: China Mirror Domains
 |         `ai.api.itedev.cn`         |         `ai.api.itedev.com`         |
 |         `static.itedev.cn`         |         `static.itedev.com`         |
 |         `fonts.itedev.cn`          |         `fonts.itedev.com`          |
-|         `hanzi.itedev.cn`          |        `fallback.itedev.com`        |
+|         `hanzi.itedev.cn`          |         `hanzi.itedev.com`          |
 
 ---
 
