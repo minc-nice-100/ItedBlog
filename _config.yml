@@ -1,5 +1,7 @@
 encoding: utf-8
 timezone: Asia/Shanghai
+future: true
+
 
 plugins:
   - jekyll-regex-replace
