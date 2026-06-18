@@ -28,3 +28,5 @@ layout: mypost
 - GitHub: [minc-nice-100](https://github.com/minc-nice-100/)
 
 - Email: [admin@itedev.com](mailto:admin@itedev.com)
+
+![VibeUsage](https://vibecafe.ai/@minc_nice_100/badge)
