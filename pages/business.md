@@ -1,6 +1,7 @@
 ---
 layout: mypost
 title: 商业合作 | Business Cooperation
+comments: false
 ---
 
 一个老派工程师底子的超级个体. 技术纵深到底, 横向跨界够宽, 一个人能跑通从产品、研发到运维、安全的全链路. 如果你有一个值得做的方向, 欢迎来谈.

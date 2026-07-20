@@ -8,6 +8,8 @@ title: Links
 |         Name          |                            Link                            |
 | :-------------------: | :--------------------------------------------------------: |
 | Let's Build Something | [/pages/lets-build-something](/pages/lets-build-something) |
+|    商业合作 Business   |             [/pages/business](/pages/business)             |
+|      声明 Legal       |                [/pages/legal](/pages/legal)                |
 |      Status Page      |  [https://status.itedev.com/](https://status.itedev.com/)  |
 | China Mirror Domains  |                   [/pages/cn](/pages/cn)                   |
 |      千字网 CDN       |   [https://hanzi.itedev.com/](https://hanzi.itedev.com/)   |
