@@ -222,35 +222,57 @@
   color: #aaa;
 }
 
-/* 文首目录 TOC */
+/* 目录 TOC:右下角悬浮按钮 + 弹出面板,与深色模式/回到顶部同风格,不占正文流 */
 .post-toc {
-  margin: 18px 0;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  background-color: #fafafa;
+  position: fixed;
+  z-index: 99;
+  right: 16px;
+  bottom: 112px; /* 深色模式 64 + 按钮 32 + 间距 16 */
+  margin: 0;
+  width: 32px;
 }
+/* 触发按钮(summary 伪装成 .footer-btn 样式) */
 .post-toc summary {
+  width: 32px;
+  height: 32px;
   cursor: pointer;
-  padding: 8px 14px;
-  font-weight: bold;
-  font-size: 14px;
-  user-select: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   list-style: none;
+  color: #ffffff;
+  font-size: 15px;
+  user-select: none;
 }
 .post-toc summary::-webkit-details-marker {
   display: none;
 }
 .post-toc summary::before {
-  content: '▸';
-  display: inline-block;
-  margin-right: 6px;
-  transition: transform 150ms ease;
+  content: '☰';
+  line-height: 1;
 }
-.post-toc[open] summary::before {
-  transform: rotate(90deg);
+/* 展开时触发按钮高亮 */
+.post-toc[open] summary {
+  background-color: rgba(0, 0, 0, 0.6);
 }
+/* 弹出目录面板:从按钮向上展开,悬浮于内容之上不占位 */
 .post-toc nav {
-  padding: 0 14px 10px 14px;
+  position: absolute;
+  right: 0;
+  bottom: 40px;
+  width: 240px;
+  max-width: 72vw;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 10px 12px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  font-size: 13px;
+  line-height: 1.6;
 }
 .post-toc ul {
   list-style: none;
@@ -258,27 +280,33 @@
   padding: 0;
 }
 .post-toc li {
-  margin: 4px 0;
-  line-height: 1.6;
+  margin: 3px 0;
 }
 .post-toc li a {
   color: inherit;
   border-bottom: none;
   margin: 0;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .post-toc li a:hover {
   text-decoration: underline;
 }
-.post-toc .toc-lv2 { padding-left: 0; }
-.post-toc .toc-lv3 { padding-left: 18px; }
-.post-toc .toc-lv4 { padding-left: 36px; }
+.post-toc .toc-lv2 { padding-left: 0; font-weight: bold; }
+.post-toc .toc-lv3 { padding-left: 14px; }
+.post-toc .toc-lv4 { padding-left: 28px; }
 
-.dark .post-toc {
-  border-color: #3b434b;
-  background-color: #161b22;
+.dark .post-toc summary {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #0d1117;
 }
-@media (prefers-reduced-motion: reduce) {
-  .post-toc summary::before {
-    transition: none;
-  }
+.dark .post-toc[open] summary {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.dark .post-toc nav {
+  background-color: #161b22;
+  border-color: #3b434b;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }

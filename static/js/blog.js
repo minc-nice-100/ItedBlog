@@ -516,14 +516,29 @@ blog.addLoadEvent(function () {
   observer.observe(document.documentElement, { attributes: true })
 })
 
-// 目录 TOC:宽屏默认展开,窄屏(移动端)默认折叠,减少首屏占用
+// 目录 TOC:点击面板外区域或点选条目后自动收起,避免遮挡阅读
 blog.addLoadEvent(function () {
   var toc = document.getElementById('post-toc')
   if (!toc) return
-  // 与 CSS 断点一致:<=560px 视为移动端
-  if (window.matchMedia && window.matchMedia('(min-width: 561px)').matches) {
-    toc.setAttribute('open', '')
-  } else {
-    toc.removeAttribute('open')
+  // 点击目录条目跳转后收起
+  var links = toc.querySelectorAll('nav a')
+  for (var i = 0; i < links.length; i++) {
+    blog.addEvent(links[i], 'click', function () {
+      toc.removeAttribute('open')
+    })
   }
+  // 点击页面其它地方收起
+  blog.addEvent(document, 'click', function (ev) {
+    if (toc.hasAttribute('open') && !toc.contains(ev.target)) {
+      toc.removeAttribute('open')
+    }
+  })
+  // Escape 收起并把焦点还给触发按钮
+  blog.addEvent(document, 'keydown', function (ev) {
+    if ((ev.key === 'Escape' || ev.key === 'Esc') && toc.hasAttribute('open')) {
+      toc.removeAttribute('open')
+      var summary = toc.querySelector('summary')
+      if (summary) summary.focus()
+    }
+  })
 })

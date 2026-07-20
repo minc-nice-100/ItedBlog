@@ -47,14 +47,16 @@ module Jekyll
       return html if items.empty?
 
       toc = +%(<details class="post-toc" id="post-toc">\n)
-      toc << %(  <summary>目录</summary>\n)
+      toc << %(  <summary aria-label="文章目录" title="目录"></summary>\n)
       toc << %(  <nav aria-label="文章目录">\n    <ul>\n)
       items.each do |it|
         toc << %(      <li class="toc-lv#{it[:level]}"><a href="##{it[:id]}">#{it[:text]}</a></li>\n)
       end
       toc << %(    </ul>\n  </nav>\n</details>\n)
 
-      toc + html
+      # 追加到正文末尾而非开头:TOC 由 CSS 悬浮定位,不占正文文档流,
+      # 避免出现在页面顶部、也不会把正文顶下去。
+      html + toc
     end
   end
 
