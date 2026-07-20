@@ -313,7 +313,22 @@ blog.addLoadEvent(function () {
   window.addEventListener('resize', toCenter)
 
   for (let i = 0; i < imgArr.length; i++) {
-    imgArr[i].addEventListener('click', imgClickEvent, true)
+    // 让正文图片可被键盘聚焦并触发放大
+    var im = imgArr[i]
+    if (!im.closest('a') && !im.hasAttribute('tabindex')) {
+      im.setAttribute('tabindex', '0')
+      im.setAttribute('role', 'button')
+      if (!im.getAttribute('aria-label')) {
+        im.setAttribute('aria-label', (im.getAttribute('alt') ? im.getAttribute('alt') + '，' : '') + '放大查看图片')
+      }
+      im.addEventListener('click', imgClickEvent, true)
+      im.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+          event.preventDefault()
+          imgClickEvent(event)
+        }
+      })
+    }
   }
 
   function prevent(ev) {
@@ -353,12 +368,24 @@ blog.addLoadEvent(function () {
     img.style.width = imgMoveOrigin.width + 'px'
     img.style.height = imgMoveOrigin.height + 'px'
 
+    document.removeEventListener('keydown', onDialogKeydown, true)
+    var origin = imgMoveOrigin
+
     setTimeout(function () {
       restoreLock = false
       document.body.removeChild(div)
       document.body.removeChild(img)
       imgMoveOrigin = null
+      // 焦点归还给原图
+      if (origin && origin.focus) origin.focus()
     }, 300)
+  }
+
+  function onDialogKeydown(event) {
+    if (event.key === 'Escape' || event.key === 'Esc') {
+      event.preventDefault()
+      restore()
+    }
   }
 
   function imgClickEvent(event) {
@@ -370,10 +397,16 @@ blog.addLoadEvent(function () {
     let img = document.createElement('img')
     img.className = 'img-move-item'
     img.src = imgMoveOrigin.src
+    img.alt = imgMoveOrigin.alt || ''
     img.style.left = imgMoveOrigin.x + 'px'
     img.style.top = imgMoveOrigin.y + 'px'
     img.style.width = imgMoveOrigin.width + 'px'
     img.style.height = imgMoveOrigin.height + 'px'
+
+    // 作为模态对话框语义暴露给辅助技术
+    div.setAttribute('role', 'dialog')
+    div.setAttribute('aria-modal', 'true')
+    div.setAttribute('aria-label', imgMoveOrigin.alt ? '图片预览：' + imgMoveOrigin.alt : '图片预览')
 
     div.onclick = restore
     div.onmousewheel = restore
@@ -386,6 +419,8 @@ blog.addLoadEvent(function () {
 
     document.body.appendChild(div)
     document.body.appendChild(img)
+
+    document.addEventListener('keydown', onDialogKeydown, true)
 
     setTimeout(function () {
       div.style.opacity = 0.5
@@ -405,12 +440,14 @@ blog.addLoadEvent(function () {
     blog.removeClass($icon, 'icon-theme-light')
     blog.addClass($icon, 'icon-theme-dark')
   }
+  $el.setAttribute('aria-pressed', blog.darkMode ? 'true' : 'false')
 
   function initDarkMode(flag) {
     blog.removeClass($icon, 'icon-theme-light')
     blog.removeClass($icon, 'icon-theme-dark')
     if (flag === 'true') blog.addClass($icon, 'icon-theme-dark')
     else blog.addClass($icon, 'icon-theme-light')
+    $el.setAttribute('aria-pressed', flag === 'true' ? 'true' : 'false')
 
     document.documentElement.setAttribute('transition', '')
     setTimeout(function () {

@@ -4,12 +4,15 @@ title: Search
 ---
 
 <div class="page page-search">
-  <input id="search-input" type="text" placeholder="Search for posts..."></input>
+  <div role="search">
+    <label for="search-input" class="sr-only">搜索文章</label>
+    <input id="search-input" type="text" placeholder="Search for posts..." aria-label="搜索文章"></input>
+  </div>
   <h1>
     <span>Search Results</span>
-    <i class="svg-icon icon-loading"></i>
+    <i class="svg-icon icon-loading" role="status" aria-label="加载中"></i>
   </h1>
-  <ul class="list-search">
+  <ul class="list-search" aria-live="polite">
     {%- for post in site.posts  %}
     <li hidden>
       <a href="{{site.baseurl}}{{ post.url }}">

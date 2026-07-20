@@ -1,6 +1,6 @@
 <header class="header">
-  <a href="{{ site.baseurl }}/" class="logo"></a>
-  <nav class="menu">
+  <a href="{{ site.baseurl }}/" class="logo" aria-label="{{ site.title }} - 首页"></a>
+  <nav class="menu" aria-label="主导航">
     {% for menu in site.menu -%}
 
       {%- assign target = "" %}

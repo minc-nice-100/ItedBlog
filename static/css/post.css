@@ -10,7 +10,7 @@
 }
 .page-post .subtitle {
   font-size: 12px;
-  color: #999999;
+  color: #767676;
 }
 .page-post .post > * {
   margin: 18px 0;
@@ -76,6 +76,9 @@
   margin: 0 auto;
   height: auto;
   box-shadow: 0 0 5px #e0e0e0;
+}
+.page-post img[role='button'] {
+  cursor: zoom-in;
 }
 .page-post img[alt='line'] {
   display: inline-block;
@@ -193,7 +196,7 @@
 
 .page-post figcaption {
   font-size: 0.85em;
-  color: #666;
+  color: #767676;
   margin-top: 0.6em;
   line-height: 1.4;
 }
