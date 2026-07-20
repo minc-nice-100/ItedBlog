@@ -1,15 +1,22 @@
 <!-- MathJax数学公式支持 -->
 <style>
+  /* has-jax 会被 MathJax 加到公式的父元素上（块级公式时可能是整个 .post 容器），
+     因此 user-select:none 绝不能写在这里，否则整篇正文都无法选中复制。
+     只让公式渲染出的内容不可选中，正文保持可选。 */
   .has-jax {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
     background-color: transparent !important;
     line-height: normal !important;
     word-break: normal !important;
     padding: 0 !important;
     margin: 0 !important;
+  }
+  .MathJax,
+  .MathJax_Display,
+  .MathJax * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   .has-jax * {
     outline: 0;
