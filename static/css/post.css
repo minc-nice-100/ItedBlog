@@ -221,3 +221,64 @@
 .dark .page-post figcaption {
   color: #aaa;
 }
+
+/* 文首目录 TOC */
+.post-toc {
+  margin: 18px 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+.post-toc summary {
+  cursor: pointer;
+  padding: 8px 14px;
+  font-weight: bold;
+  font-size: 14px;
+  user-select: none;
+  list-style: none;
+}
+.post-toc summary::-webkit-details-marker {
+  display: none;
+}
+.post-toc summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 6px;
+  transition: transform 150ms ease;
+}
+.post-toc[open] summary::before {
+  transform: rotate(90deg);
+}
+.post-toc nav {
+  padding: 0 14px 10px 14px;
+}
+.post-toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.post-toc li {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+.post-toc li a {
+  color: inherit;
+  border-bottom: none;
+  margin: 0;
+}
+.post-toc li a:hover {
+  text-decoration: underline;
+}
+.post-toc .toc-lv2 { padding-left: 0; }
+.post-toc .toc-lv3 { padding-left: 18px; }
+.post-toc .toc-lv4 { padding-left: 36px; }
+
+.dark .post-toc {
+  border-color: #3b434b;
+  background-color: #161b22;
+}
+@media (prefers-reduced-motion: reduce) {
+  .post-toc summary::before {
+    transition: none;
+  }
+}

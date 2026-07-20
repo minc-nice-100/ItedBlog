@@ -515,3 +515,15 @@ blog.addLoadEvent(function () {
   })
   observer.observe(document.documentElement, { attributes: true })
 })
+
+// 目录 TOC:宽屏默认展开,窄屏(移动端)默认折叠,减少首屏占用
+blog.addLoadEvent(function () {
+  var toc = document.getElementById('post-toc')
+  if (!toc) return
+  // 与 CSS 断点一致:<=560px 视为移动端
+  if (window.matchMedia && window.matchMedia('(min-width: 561px)').matches) {
+    toc.setAttribute('open', '')
+  } else {
+    toc.removeAttribute('open')
+  }
+})
