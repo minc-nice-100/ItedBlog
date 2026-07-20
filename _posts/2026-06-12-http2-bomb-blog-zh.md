@@ -3,6 +3,7 @@ layout: mypost
 title: HTTP/2 Bomb：HPACK 索引引用放大链攻击技术深度剖析
 author: minc_nice_100
 category: "论文"
+description: 深入剖析 HTTP/2 Bomb 攻击原理:HPACK 索引引用放大链与流控窗口卡死组合,实现高达 5700:1 的流量放大,覆盖 nginx、Envoy、IIS 等主流实现。
 ---
 
 > 本文由 Deepseek V4 Pro 撰写(太累了不想写了), 还没审校, 还请各位读者帮我排排错, 原论文在文末

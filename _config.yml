@@ -11,7 +11,7 @@ plugins:
 
 # SEO相关信息
 title: Ited Blog
-description: You are good enough.
+description: minc_nice_100 的技术博客,记录编程、运维、网络与安全实践。
 keywords: Ited, blog, tech, programming, coding, life, 博客, 技术, 编程, 编码, 生活, minc_nice_100, 土拨鼠
 author: minc_nice_100
 footerText: 'Copr. 2022 Ited Blog'
@@ -19,7 +19,7 @@ url: https://www.itedev.com
 logo: /static/img/logo.jpg
 lang: zh-CN
 # 这些不要动
-permalink: /posts/:year/:month/:day/:title.html
+permalink: /posts/:year/:month/:day/:title
 kramdown:
   auto_ids: true
   input: GFM
@@ -97,3 +97,11 @@ links:
 
 incremental: true
 future: false
+
+# 全站默认值:文章未指定 image 时用 logo 作为 og:image 分享图
+defaults:
+  - scope:
+      type: posts
+    values:
+      image: /static/img/logo.jpg
+
