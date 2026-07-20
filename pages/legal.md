@@ -17,9 +17,9 @@ toc: true
 
 ## 二、侵权通知与删除 | Notice and Takedown
 
-本站部分素材来自公开网络, 未能逐一标注出处. 我尊重每一位真实权利人的合法权益, 并设立如下通知-删除机制: 若你是某内容的合法权利人, 认为本站内容侵犯了你的权益, 请通过 [About](/pages/about.html) 页的联系方式发送书面通知, 并尽可能提供: (1) 你享有权利的证明(原始文件、首发链接、权属说明等); (2) 涉嫌侵权内容在本站的具体链接; (3) 你的有效联系方式. 经核实权属后, 我会在 **72 小时内删除或替换**相关内容, 并回复处理结果.
+本站部分素材来自公开网络, 未能逐一标注出处. 我尊重每一位真实权利人的合法权益, 并设立如下通知-删除机制: 若你是某内容的合法权利人, 认为本站内容侵犯了你的权益, 请通过 [About](/pages/about.html) 页的联系方式发送书面通知, 并尽可能提供: (1) 你享有权利的证明(原始文件、首发链接、权属说明等); (2) 涉嫌侵权内容在本站的具体链接; (3) 你的有效联系方式. 经核实权属后, 我会在**合理期限内尽快删除或替换**相关内容, 并视情况回复处理结果. 你理解并同意, 我可能需要合理时间核实权属及处理, 该核实与处理不构成我对任何责任的承认.
 
-<span class="en">Some assets on this site come from the public web and are not individually attributed. I respect the rights of genuine rights-holders and provide this notice-and-takedown procedure: if you are the lawful rights-holder of content that you believe infringes your rights, send a written notice via the contact on the About page, providing where possible: (1) proof of your rights (original files, first-publication links, ownership statement); (2) the specific URL(s) of the allegedly infringing content; (3) your valid contact details. Upon verification, I will remove or replace the content within 72 hours and reply with the outcome.</span>
+<span class="en">Some assets on this site come from the public web and are not individually attributed. I respect the rights of genuine rights-holders and provide this notice-and-takedown procedure: if you are the lawful rights-holder of content that you believe infringes your rights, send a written notice via the contact on the About page, providing where possible: (1) proof of your rights (original files, first-publication links, ownership statement); (2) the specific URL(s) of the allegedly infringing content; (3) your valid contact details. Upon verification, I will remove or replace the content as soon as reasonably practicable within a reasonable period, and may reply with the outcome. You understand and agree that I may need reasonable time to verify ownership and act, and that such verification and action do not constitute any admission of liability on my part.</span>
 
 ## 三、关于视觉中国及同类"维权"机构 | On Certain "Rights-Enforcement" Entities
 
@@ -50,8 +50,9 @@ toc: true
    - **境内争议**(争议双方均在中华人民共和国境内的), 提交**广州仲裁委员会**, 按其届时有效的仲裁规则在广州仲裁.
    - **涉外争议**(任一方住所地在中华人民共和国境外, 或争议标的涉外的), 提交**深圳国际仲裁院(SCIA)**, 按其届时有效的仲裁规则在深圳仲裁.
 3. 仲裁地为上述仲裁机构所在地, 仲裁语言为中文, 仲裁庭由一名独任仲裁员组成. **仲裁裁决为终局裁决, 对双方均有约束力, 任何一方均可向有管辖权的法院申请强制执行.** 仲裁费用及各方律师费等, 由仲裁庭依职权裁定.
+4. 向位于中华人民共和国境外的当事人送达仲裁文书及其他法律文书的, 依《承认及执行外国仲裁裁决公约》(《纽约公约》)、《海牙送达公约》或相关司法协助条约规定的途径进行; 境内当事人的送达, 依中华人民共和国法律及仲裁机构规则进行.
 
-<span class="en">(1) This statement and all disputes arising from the use of this site are governed by the laws of the People's Republic of China (excluding the laws of Hong Kong, Macao, and Taiwan). (2) Disputes shall first be resolved through friendly consultation; failing that, they shall be submitted to arbitration as follows: for domestic disputes (both parties within the PRC), to the Guangzhou Arbitration Commission in Guangzhou under its then-effective rules; for foreign-related disputes (where either party is domiciled outside the PRC or the subject matter is foreign-related), to the Shenzhen Court of International Arbitration (SCIA) in Shenzhen under its then-effective rules. (3) The seat of arbitration is the location of the respective institution; the language of arbitration is Chinese; the tribunal shall consist of a sole arbitrator. The award is final and binding, and either party may apply to a competent court for enforcement. Arbitration fees and each party's legal fees shall be allocated at the tribunal's discretion.</span>
+<span class="en">(1) This statement and all disputes arising from the use of this site are governed by the laws of the People's Republic of China (excluding the laws of Hong Kong, Macao, and Taiwan). (2) Disputes shall first be resolved through friendly consultation; failing that, they shall be submitted to arbitration as follows: for domestic disputes (both parties within the PRC), to the Guangzhou Arbitration Commission in Guangzhou under its then-effective rules; for foreign-related disputes (where either party is domiciled outside the PRC or the subject matter is foreign-related), to the Shenzhen Court of International Arbitration (SCIA) in Shenzhen under its then-effective rules. (3) The seat of arbitration is the location of the respective institution; the language of arbitration is Chinese; the tribunal shall consist of a sole arbitrator. The award is final and binding, and either party may apply to a competent court for enforcement. Arbitration fees and each party's legal fees shall be allocated at the tribunal's discretion. (4) Service of arbitral and other legal documents on a party located outside the PRC shall be effected through the channels prescribed by the Convention on the Recognition and Enforcement of Foreign Arbitral Awards (the New York Convention), the Hague Service Convention, or the applicable judicial-assistance treaty; service on a party within the PRC follows PRC law and the institution's rules.</span>
 
 ## 七、其他 | Miscellaneous
 
@@ -60,8 +61,32 @@ toc: true
 3. 即便相关内容被删除或本站停止服务, 本声明中的免责声明、侵权处理及争议解决条款仍然存续有效.
 4. 本站内各页面若有针对特定事项的特别条款, 该等特别条款优先适用; **特别条款未覆盖的事项, 适用本声明.**
 5. 本声明为格式条款, 依《中华人民共和国民法典》第四百九十六条至第四百九十八条, 我已以合理方式提示你注意免责、责任限制及争议解决等与你有重大利害关系的条款; 条款有两种以上解释时, 依通常理解予以解释.
+6. **本声明以中文书就并以此为唯一准据文本. 英文译文仅为便利阅读而设, 不具法律效力; 中英文内容如有歧义或不一致, 概以中文文本为准.**
 
-<span class="en">(1) If any provision of this statement is held invalid or unenforceable, the remaining provisions remain in effect. (2) I may revise this statement; revisions take effect upon posting on this page, and your continued use of the site constitutes acceptance. (3) Even if content is removed or the site ceases operation, the disclaimer, takedown, and dispute-resolution provisions of this statement survive. (4) Where a page on this site has specific terms for particular matters, those specific terms prevail; matters not covered by specific terms are governed by this statement. (5) This statement consists of standard terms; pursuant to Articles 496–498 of the Civil Code of the PRC, I have drawn your attention in a reasonable manner to clauses of material interest to you, such as disclaimers, limitations of liability, and dispute resolution; where a clause admits of two interpretations, the common understanding applies.</span>
+<span class="en">(1) If any provision of this statement is held invalid or unenforceable, the remaining provisions remain in effect. (2) I may revise this statement; revisions take effect upon posting on this page, and your continued use of the site constitutes acceptance. (3) Even if content is removed or the site ceases operation, the disclaimer, takedown, and dispute-resolution provisions of this statement survive. (4) Where a page on this site has specific terms for particular matters, those specific terms prevail; matters not covered by specific terms are governed by this statement. (5) This statement consists of standard terms; pursuant to Articles 496–498 of the Civil Code of the PRC, I have drawn your attention in a reasonable manner to clauses of material interest to you, such as disclaimers, limitations of liability, and dispute resolution; where a clause admits of two interpretations, the common understanding applies. (6) This statement is executed in Chinese, which is the sole authoritative text. The English translation is provided for convenience only and has no legal effect; in case of any discrepancy or inconsistency between the Chinese and English versions, the Chinese version shall prevail.</span>
+
+## 八、版本与法律时效 | Version and Changes in Law
+
+1. **本声明以本站线上公示的最新版本为准**, 而非以任何代码仓库中的提交(commit)记录为准. 你可在本页底部查看当前生效版本的更新日期.
+2. 本声明各条款基于其制定时有效的法律法规拟定. 若相关法律、法规、司法解释或仲裁规则发生修订, 则: (1) 在新法生效前已启动的争议解决程序, 适用争议启动时有效的法律与本声明版本; (2) 新法生效后启动的程序, 适用届时有效的法律; (3) 本声明与新法强制性规定不一致的条款, 以新法为准, 其余条款继续有效.
+3. 你在相关法律修订后继续使用本站, 视为接受依新法调整后的条款.
+
+<span class="en">(1) This statement is governed by the latest version published on this site, not by any commit history in a code repository. The update date of the currently effective version is shown at the bottom of this page. (2) The clauses of this statement are drafted under the laws and regulations in force at the time of drafting. If applicable laws, regulations, judicial interpretations, or arbitration rules are amended: (a) dispute-resolution proceedings initiated before the new law takes effect are governed by the law and the version of this statement in force at the time of initiation; (b) proceedings initiated after the new law takes effect are governed by the law then in force; (c) any clause inconsistent with a mandatory provision of the new law yields to that provision, while the remaining clauses stay in effect. (3) Your continued use of the site after such legal amendment constitutes acceptance of the clauses as adjusted under the new law.</span>
+
+## 参考依据 | References
+
+本声明的拟定参考了以下法律法规、国际条约及通行做法, 以说明各项条款事出有理:
+
+- 《中华人民共和国民法典》(第四百六十四条、第四百六十六条、第四百九十六条至第四百九十八条——合同订立、多文本解释与格式条款)
+- 《中华人民共和国著作权法》及信息网络传播权保护相关规定(通知-删除机制)
+- 《中华人民共和国仲裁法》(仲裁协议、一裁终局)
+- 《承认及执行外国仲裁裁决公约》(《纽约公约》, 1958)
+- 《关于向国外送达民事或商事司法文书和司法外文书公约》(《海牙送达公约》, 1965)
+- 《取消外国公文书认证要求的公约》(Apostille 公约, 2023 年对中国生效)
+- [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 知识共享许可
+- 行业通行的网站服务条款与免责声明范本
+
+<span class="en">This statement was drafted with reference to the following laws, treaties, and common practice, to show that its clauses are well-grounded: the Civil Code of the PRC (Arts. 464, 466, 496–498); the Copyright Law of the PRC and notice-and-takedown rules; the Arbitration Law of the PRC; the New York Convention (1958); the Hague Service Convention (1965); the Apostille Convention (effective for China in 2023); the CC BY-NC-SA 4.0 license; and prevailing website terms-of-service and disclaimer templates.</span>
 
 ---
 
