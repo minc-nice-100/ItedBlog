@@ -13,7 +13,7 @@ title: 首页
       <ul>
     {%- endif %}
         <li>
-          <span class="date">{{ post.date | date: "%Y.%m.%d" }}</span>
+          <span class="date">{{ post.date | date: "%m.%d" }}</span>
           <div class="title">
             <a href="{{ site.baseurl | append: post.url }}" class="hover-underline">{{ post.title }}</a>
           </div>
