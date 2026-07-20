@@ -19,27 +19,44 @@
   margin: 0;
   width: 100%;
 }
+/* 正文不允许 h1,视觉上一律降级为 h2(1 个 #);h2 起 # 个数 = 层级 */
+.page-post .post h1,
+.page-post .post h2,
+.page-post .post h3,
+.page-post .post h4,
+.page-post .post h5,
+.page-post .post h6 {
+  position: relative;
+  cursor: pointer;
+}
 .page-post .post h1,
 .page-post .post h2 {
   font-weight: normal;
   font-size: 17px;
-  position: relative;
-  cursor: pointer;
+}
+.page-post .post h3,
+.page-post .post h4,
+.page-post .post h5,
+.page-post .post h6 {
+  font-size: 15px;
+  font-weight: bold;
 }
 .page-post .post h1::before,
-.page-post .post h2::before {
-  content: '#';
+.page-post .post h2::before,
+.page-post .post h3::before,
+.page-post .post h4::before,
+.page-post .post h5::before,
+.page-post .post h6::before {
   top: 0;
   font-weight: bold;
   padding-right: 6px;
 }
-.page-post h3,
-.page-post h4,
-.page-post h5,
-.page-post h6 {
-  font-size: 15px;
-  font-weight: bold;
-}
+.page-post .post h1::before { content: '#'; }
+.page-post .post h2::before { content: '##'; }
+.page-post .post h3::before { content: '###'; }
+.page-post .post h4::before { content: '####'; }
+.page-post .post h5::before { content: '#####'; }
+.page-post .post h6::before { content: '######'; }
 .page-post blockquote {
   border-left: 3px solid #333333;
   background-color: #f7f7f7;
