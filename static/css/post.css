@@ -310,3 +310,14 @@
   border-color: #3b434b;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
+
+/* 中英对照页的英文译行:降视觉权重,正文以中文为主 */
+.page-post .en {
+  display: block;
+  font-size: 0.86em;
+  color: #767676;
+  line-height: 1.6;
+}
+.dark .page-post .en {
+  color: #8b949e;
+}
