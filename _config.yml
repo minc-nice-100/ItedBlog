@@ -39,16 +39,16 @@ tucaoUrl: https://github.com/minc-nice-100/minc-nice-100/issues/new
 # 可选字段 target: '_blank' 新页面打开 
 menu:
   - title: Search
-    url: /pages/search.html
+    url: /pages/search
   - title: Categories
-    url: /pages/categories.html
+    url: /pages/categories
   - title: Links
-    url: /pages/links.html
+    url: /pages/links
   # - title: Chat
-  #   url: /pages/chat.html
+  #   url: /pages/chat
   #   target: '_blank'
   - title: About
-    url: /pages/about.html
+    url: /pages/about
 
 # 点击页面文字冒出特效,不需要请设置为false
 extClickEffect: false
